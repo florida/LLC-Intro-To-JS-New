@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* updated clearfix hack: 
+/* updated clearfix hack:
 http://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
   content: "";
@@ -131,9 +131,6 @@ footer .license img {
 }
 .slide.centered {
   text-align: center;
-}
-.slide.centered img {
-  width: 60%;
 }
 
 /* vertical align heading */
