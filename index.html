@@ -89,15 +89,9 @@
 
           <p>
             <a href="http://www.sublimetext.com/"><img width="200"  src="framework/img/brackets-logo.png" alt="Sublime Text"/></a>
-
             <a href="http://www.sublimetext.com/"><img width="200" src="framework/img/atom-logo.png" alt="Sublime Text"/></a>
-
-
           </p>
-
-
-
-                  </section>
+        </section>
 
         <section class="slide title">
           <h1>Technology Overview</h1>
@@ -126,7 +120,7 @@
 
           The clearer the instructions, the more likely they will get to their destination.
 
-          ![rawbot computers](framework/img/directions.png)
+          ![rawbot computers](framework/img/rawbot-directions.png)
         </section>
 
         <section class="slide">
@@ -134,17 +128,90 @@
 
           <p>Suppose I want a computer to say hello using my name.</p>
 
-          <p>Break down the steps as much as possible:<>
+          <p><b>Break down the steps</b> as much as possible:
 
           <ol>
-            <li class="delayed">Allow me to type in my name.</li>
-            <li class="delayed">Remember my name.</li>
-            <li class="delayed">Say "Hello" and repeat back my name.</li>
+            <li class="delayed">Allow me to type in my name.
+              <p><img class="right-align" src="framework/img/name-text-rawbot.gif" alt="allow to type name" height="100"/></p>
+            </li>
+            <li class="delayed">Remember my name.
+              <p><img class="right-align" src="framework/img/remember-name-rawbot.gif" alt="remember my nane" height="80"/></p>
+            </li>
+            <li class="delayed">Say "Hello" and repeat back my name.
+              <p><img class="right-align" src="framework/img/say-my-name-rawbot.png" alt="say hello" height="80"/></p>
+            </li>
           </ol>
         </section>
 
+        <section class="slide">
+          <h2>Speak the computer's language</h2>
 
+          <p>Programming is like having a conversation with your computer. You write to it using a programming language and give it instructions this way.</p>
 
+          <p>Computers only understand instructions when you speak to them in a language they can understand. Much like Japanese, English or any other natural language, programming is about sticking to grammar rules called <span class="highlight">syntax.</span></p>
+
+          <small>Syntax - is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</small>
+        </section>
+
+        <section class="slide">
+          <h2>Speak the computer's language</h2>
+
+          <p>Computers have come a long way since their binary days</p>
+          <p><img src="framework/img/rawbot-binary.png" alt="computer binary"/></p>
+          <p>(<code>0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 0 0 1 1 1 1</code>) so meet them half-way.</p>
+        </section>
+
+        <section class="slide title">
+          <h1>Sample Code Incoming!!<br /><br />
+          <img src="framework/img/rawbot-face.png" alt="robot face" /></h1>
+        </section>
+
+        <section class="slide">
+          <h2>Example Programming Syntaxes</h2>
+
+          <p>Different programming languages have different syntax.</p>
+
+          <p>Here are two ways a computer could say hi to me:
+            <img src="framework/img/hi-rawbot.png" align="right" height="100">
+          </p>
+
+          <h3>Java</h3>
+
+          <pre><code>Scanner userInput = new Scanner(System.in);
+String name;
+System.out.print("What's your name? ");
+name = userInput.next();
+System.out.println("Hello, " + name);</code></pre>
+
+          <h3>Javascript</h3>
+          <pre><code>var name;
+name = window.prompt("What's your name?",'');
+document.write("Hello, " + name);</code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>JavaScript versus Java</h2>
+
+          <p>They might vaguely look the same (as a lot of programming languages do) but they are not related at all.</p>
+
+          <p><img src="framework/img/java-javascript-rawbot.png" alt="java javascript"/></p>
+          <small>(Java was really popular at the time so Netscape just hijacked the name.)</small>
+        </section>
+
+        <section class="slide title">
+          <h1>What is JavaScript?</h1>
+          <h2 class="delayed">It's a programming language</h2>
+          <h2 class="delayed">that was designed to run in your web browser</h2>
+          <h2 class="delayed">to manipulate content on web pages.</h2>
+        </section>
+
+        <section class="slide centered">
+          <h2>What is JavaScript?</h2>
+
+          <p>C++, Java, and .NET are also programming languages but they can be run directly by the operating system (e.g. Windows, Mac, Linux). </p>
+          <img src="framework/img/computer-diagram-os-languages.gif" alt="computer diagram" height="500" />
+
+        </section>
 
         <section class="slide title">
           <h1>Title Slide Example: add a title class to section tag</h1>
@@ -154,7 +221,6 @@
           <h1>Title Slide Example</h1>
           <h2>Sub-heading example</h2>
         </section>
-
 
       <section class="slide">
         <h2>Syntax Highlighting</h2>
