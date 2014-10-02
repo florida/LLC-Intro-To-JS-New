@@ -1,2 +1,7 @@
 /* Styles specific to this workshop
 ------------------------------------*/
+
+.highlight {
+  text-transform: uppercase;
+  font-weight: 600;
+}
