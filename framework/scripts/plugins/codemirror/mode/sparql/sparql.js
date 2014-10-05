@@ -1,16 +1,3 @@
-// CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: http://codemirror.net/LICENSE
-
-(function(mod) {
-  if (typeof exports == "object" && typeof module == "object") // CommonJS
-    mod(require("../../lib/codemirror"));
-  else if (typeof define == "function" && define.amd) // AMD
-    define(["../../lib/codemirror"], mod);
-  else // Plain browser env
-    mod(CodeMirror);
-})(function(CodeMirror) {
-"use strict";
-
 CodeMirror.defineMode("sparql", function(config) {
   var indentUnit = config.indentUnit;
   var curPunc;
@@ -19,12 +6,10 @@ CodeMirror.defineMode("sparql", function(config) {
     return new RegExp("^(?:" + words.join("|") + ")$", "i");
   }
   var ops = wordRegexp(["str", "lang", "langmatches", "datatype", "bound", "sameterm", "isiri", "isuri",
-                        "isblank", "isliteral", "a"]);
+                        "isblank", "isliteral", "union", "a"]);
   var keywords = wordRegexp(["base", "prefix", "select", "distinct", "reduced", "construct", "describe",
                              "ask", "from", "named", "where", "order", "limit", "offset", "filter", "optional",
-                             "graph", "by", "asc", "desc", "as", "having", "undef", "values", "group",
-                             "minus", "in", "not", "service", "silent", "using", "insert", "delete", "union",
-                             "data", "copy", "to", "move", "add", "create", "drop", "clear", "load"]);
+                             "graph", "by", "asc", "desc"]);
   var operatorChars = /[*+\-<>=&|]/;
 
   function tokenBase(stream, state) {
@@ -64,7 +49,7 @@ CodeMirror.defineMode("sparql", function(config) {
         stream.eatWhile(/[\w\d_\-]/);
         return "atom";
       }
-      var word = stream.current();
+      var word = stream.current(), type;
       if (ops.test(word))
         return null;
       else if (keywords.test(word))
@@ -97,7 +82,7 @@ CodeMirror.defineMode("sparql", function(config) {
   }
 
   return {
-    startState: function() {
+    startState: function(base) {
       return {tokenize: tokenBase,
               context: null,
               indent: 0,
@@ -132,7 +117,7 @@ CodeMirror.defineMode("sparql", function(config) {
           state.context.col = stream.column();
         }
       }
-
+      
       return style;
     },
 
@@ -156,5 +141,3 @@ CodeMirror.defineMode("sparql", function(config) {
 });
 
 CodeMirror.defineMIME("application/x-sparql-query", "sparql");
-
-});

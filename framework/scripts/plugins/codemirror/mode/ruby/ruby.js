@@ -1,17 +1,4 @@
-// CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: http://codemirror.net/LICENSE
-
-(function(mod) {
-  if (typeof exports == "object" && typeof module == "object") // CommonJS
-    mod(require("../../lib/codemirror"));
-  else if (typeof define == "function" && define.amd) // AMD
-    define(["../../lib/codemirror"], mod);
-  else // Plain browser env
-    mod(CodeMirror);
-})(function(CodeMirror) {
-"use strict";
-
-CodeMirror.defineMode("ruby", function(config) {
+CodeMirror.defineMode("ruby", function(config, parserConfig) {
   function wordObj(words) {
     var o = {};
     for (var i = 0, e = words.length; i < e; ++i) o[words[i]] = true;
@@ -23,10 +10,10 @@ CodeMirror.defineMode("ruby", function(config) {
     "redo", "rescue", "retry", "return", "self", "super", "then", "true", "undef", "unless",
     "until", "when", "while", "yield", "nil", "raise", "throw", "catch", "fail", "loop", "callcc",
     "caller", "lambda", "proc", "public", "protected", "private", "require", "load",
-    "require_relative", "extend", "autoload", "__END__", "__FILE__", "__LINE__", "__dir__"
+    "require_relative", "extend", "autoload"
   ]);
-  var indentWords = wordObj(["def", "class", "case", "for", "while", "module", "then",
-                             "catch", "loop", "proc", "begin"]);
+  var indentWords = wordObj(["def", "class", "case", "for", "while", "do", "module", "then",
+                             "unless", "catch", "loop", "proc"]);
   var dedentWords = wordObj(["end", "until"]);
   var matching = {"[": "]", "{": "}", "(": ")"};
   var curPunc;
@@ -43,41 +30,28 @@ CodeMirror.defineMode("ruby", function(config) {
       return "comment";
     }
     if (stream.eatSpace()) return null;
-    var ch = stream.next(), m;
-    if (ch == "`" || ch == "'" || ch == '"') {
-      return chain(readQuoted(ch, "string", ch == '"' || ch == "`"), stream, state);
-    } else if (ch == "/") {
-      var currentIndex = stream.current().length;
-      if (stream.skipTo("/")) {
-        var search_till = stream.current().length;
-        stream.backUp(stream.current().length - currentIndex);
-        var balance = 0;  // balance brackets
-        while (stream.current().length < search_till) {
-          var chchr = stream.next();
-          if (chchr == "(") balance += 1;
-          else if (chchr == ")") balance -= 1;
-          if (balance < 0) break;
-        }
-        stream.backUp(stream.current().length - currentIndex);
-        if (balance == 0)
-          return chain(readQuoted(ch, "string-2", true), stream, state);
-      }
-      return "operator";
+    var ch = stream.next();
+    if (ch == "`" || ch == "'" || ch == '"' || ch == "/") {
+      return chain(readQuoted(ch, "string", ch == '"'), stream, state);
     } else if (ch == "%") {
-      var style = "string", embed = true;
+      var style, embed = false;
       if (stream.eat("s")) style = "atom";
-      else if (stream.eat(/[WQ]/)) style = "string";
-      else if (stream.eat(/[r]/)) style = "string-2";
-      else if (stream.eat(/[wxq]/)) { style = "string"; embed = false; }
-      var delim = stream.eat(/[^\w\s=]/);
+      else if (stream.eat(/[WQ]/)) { style = "string"; embed = true; }
+      else if (stream.eat(/[wxqr]/)) style = "string";
+      var delim = stream.eat(/[^\w\s]/);
       if (!delim) return "operator";
       if (matching.propertyIsEnumerable(delim)) delim = matching[delim];
       return chain(readQuoted(delim, style, embed, true), stream, state);
     } else if (ch == "#") {
       stream.skipToEnd();
       return "comment";
-    } else if (ch == "<" && (m = stream.match(/^<-?[\`\"\']?([a-zA-Z_?]\w*)[\`\"\']?(?:;|$)/))) {
-      return chain(readHereDoc(m[1]), stream, state);
+    } else if (ch == "<" && stream.eat("<")) {
+      stream.eat("-");
+      stream.eat(/[\'\"\`]/);
+      var match = stream.match(/^\w+/);
+      stream.eat(/[\'\"\`]/);
+      if (match) return chain(readHereDoc(match[0]), stream, state);
+      return null;
     } else if (ch == "0") {
       if (stream.eat("x")) stream.eatWhile(/[\da-fA-F]/);
       else if (stream.eat("b")) stream.eatWhile(/[01]/);
@@ -94,42 +68,18 @@ CodeMirror.defineMode("ruby", function(config) {
     } else if (ch == ":") {
       if (stream.eat("'")) return chain(readQuoted("'", "atom", false), stream, state);
       if (stream.eat('"')) return chain(readQuoted('"', "atom", true), stream, state);
-
-      // :> :>> :< :<< are valid symbols
-      if (stream.eat(/[\<\>]/)) {
-        stream.eat(/[\<\>]/);
-        return "atom";
-      }
-
-      // :+ :- :/ :* :| :& :! are valid symbols
-      if (stream.eat(/[\+\-\*\/\&\|\:\!]/)) {
-        return "atom";
-      }
-
-      // Symbols can't start by a digit
-      if (stream.eat(/[a-zA-Z$@_]/)) {
-        stream.eatWhile(/[\w]/);
-        // Only one ? ! = is allowed and only as the last character
-        stream.eat(/[\?\!\=]/);
-        return "atom";
-      }
-      return "operator";
-    } else if (ch == "@" && stream.match(/^@?[a-zA-Z_]/)) {
+      stream.eatWhile(/[\w\?]/);
+      return "atom";
+    } else if (ch == "@") {
       stream.eat("@");
-      stream.eatWhile(/[\w]/);
+      stream.eatWhile(/[\w\?]/);
       return "variable-2";
     } else if (ch == "$") {
-      if (stream.eat(/[a-zA-Z_]/)) {
-        stream.eatWhile(/[\w]/);
-      } else if (stream.eat(/\d/)) {
-        stream.eat(/\d/);
-      } else {
-        stream.next(); // Must be a special global like $: or $!
-      }
+      stream.next();
+      stream.eatWhile(/[\w\?]/);
       return "variable-3";
-    } else if (/[a-zA-Z_]/.test(ch)) {
-      stream.eatWhile(/[\w]/);
-      stream.eat(/[\?\!]/);
+    } else if (/\w/.test(ch)) {
+      stream.eatWhile(/[\w\?]/);
       if (stream.eat(":")) return "atom";
       return "ident";
     } else if (ch == "|" && (state.varList || state.lastTok == "{" || state.lastTok == "do")) {
@@ -141,8 +91,7 @@ CodeMirror.defineMode("ruby", function(config) {
     } else if (ch == "-" && stream.eat(">")) {
       return "arrow";
     } else if (/[=+\-\/*:\.^%<>~|]/.test(ch)) {
-      var more = stream.eatWhile(/[=+\-\/*:\.^%<>~|]/);
-      if (ch == "." && !more) curPunc = ".";
+      stream.eatWhile(/[=+\-\/*:\.^%<>~|]/);
       return "operator";
     } else {
       return null;
@@ -164,42 +113,17 @@ CodeMirror.defineMode("ruby", function(config) {
       return tokenBase(stream, state);
     };
   }
-  function tokenBaseOnce() {
-    var alreadyCalled = false;
-    return function(stream, state) {
-      if (alreadyCalled) {
-        state.tokenize.pop();
-        return state.tokenize[state.tokenize.length-1](stream, state);
-      }
-      alreadyCalled = true;
-      return tokenBase(stream, state);
-    };
-  }
   function readQuoted(quote, style, embed, unescaped) {
     return function(stream, state) {
       var escaped = false, ch;
-
-      if (state.context.type === 'read-quoted-paused') {
-        state.context = state.context.prev;
-        stream.eat("}");
-      }
-
       while ((ch = stream.next()) != null) {
         if (ch == quote && (unescaped || !escaped)) {
           state.tokenize.pop();
           break;
         }
-        if (embed && ch == "#" && !escaped) {
-          if (stream.eat("{")) {
-            if (quote == "}") {
-              state.context = {prev: state.context, type: 'read-quoted-paused'};
-            }
-            state.tokenize.push(tokenBaseUntilBrace());
-            break;
-          } else if (/[@\$]/.test(stream.peek())) {
-            state.tokenize.push(tokenBaseOnce());
-            break;
-          }
+        if (embed && ch == "#" && !escaped && stream.eat("{")) {
+          state.tokenize.push(tokenBaseUntilBrace(arguments.callee));
+          break;
         }
         escaped = !escaped && ch == "\\";
       }
@@ -233,25 +157,17 @@ CodeMirror.defineMode("ruby", function(config) {
     token: function(stream, state) {
       if (stream.sol()) state.indented = stream.indentation();
       var style = state.tokenize[state.tokenize.length-1](stream, state), kwtype;
-      var thisTok = curPunc;
       if (style == "ident") {
         var word = stream.current();
-        style = state.lastTok == "." ? "property"
-          : keywords.propertyIsEnumerable(stream.current()) ? "keyword"
+        style = keywords.propertyIsEnumerable(stream.current()) ? "keyword"
           : /^[A-Z]/.test(word) ? "tag"
           : (state.lastTok == "def" || state.lastTok == "class" || state.varList) ? "def"
           : "variable";
-        if (style == "keyword") {
-          thisTok = word;
-          if (indentWords.propertyIsEnumerable(word)) kwtype = "indent";
-          else if (dedentWords.propertyIsEnumerable(word)) kwtype = "dedent";
-          else if ((word == "if" || word == "unless") && stream.column() == stream.indentation())
-            kwtype = "indent";
-          else if (word == "do" && state.context.indented < state.indented)
-            kwtype = "indent";
-        }
+        if (indentWords.propertyIsEnumerable(word)) kwtype = "indent";
+        else if (dedentWords.propertyIsEnumerable(word)) kwtype = "dedent";
+        else if (word == "if" && stream.column() == stream.indentation()) kwtype = "indent";
       }
-      if (curPunc || (style && style != "comment")) state.lastTok = thisTok;
+      if (curPunc || (style && style != "comment")) state.lastTok = word || curPunc || style;
       if (curPunc == "|") state.varList = !state.varList;
 
       if (kwtype == "indent" || /[\(\[\{]/.test(curPunc))
@@ -269,16 +185,11 @@ CodeMirror.defineMode("ruby", function(config) {
       var firstChar = textAfter && textAfter.charAt(0);
       var ct = state.context;
       var closing = ct.type == matching[firstChar] ||
-        ct.type == "keyword" && /^(?:end|until|else|elsif|when|rescue)\b/.test(textAfter);
+        ct.type == "keyword" && /^(?:end|until|else|elsif|when)\b/.test(textAfter);
       return ct.indented + (closing ? 0 : config.indentUnit) +
         (state.continuedLine ? config.indentUnit : 0);
-    },
-
-    electricChars: "}de", // enD and rescuE
-    lineComment: "#"
+    }
   };
 });
 
 CodeMirror.defineMIME("text/x-ruby", "ruby");
-
-});
