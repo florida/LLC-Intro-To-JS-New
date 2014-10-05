@@ -5,3 +5,7 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+
+.bigger-text {
+  font-size: 35px;
+}
