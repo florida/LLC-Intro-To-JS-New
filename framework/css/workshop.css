@@ -6,6 +6,11 @@
   font-weight: 600;
 }
 
+.highlight-color {
+  background-color: #ebcb8b;
+  padding: 10px;
+}
+
 .bigger-text {
   font-size: 35px;
 }
