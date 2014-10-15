@@ -14,3 +14,20 @@
 .bigger-text {
   font-size: 35px;
 }
+
+.comparison-table {
+  background-color: #2b303b;
+  color: #dfe1e8;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  float: left;
+}
+
+.comparison-table td, .comparison-table th {
+  padding: 5px;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #343d46;
+}

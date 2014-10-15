@@ -916,7 +916,268 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
 
         <section class="slide">
           <h2>Conditional Statements Summary</h2>
-          <h3>If Statement</h3>
+          <table cellpadding="20" style="width:100%">
+            <tr>
+              <td><h3>If Statement</h3></td>
+              <td><h3>If...else statement</h3></td>
+              <td><h3>If...else if...else statement</h3></td>
+            </tr>
+            <tr>
+              <td valign="top">
+                <div data-markdown>
+                  ```javascript
+                  if (condition) {
+                    // do something
+                  }
+                  ```
+                </div>
+              </td>
+              <td valign="top">
+                <div data-markdown>
+                  ```javascript
+                  if (condition) {
+                    // do something
+                  } else {
+                    // otherwise do this
+                  }
+                  ```
+                </div>
+              </td>
+              <td valign="top">
+                <div data-markdown>
+                  ```javascript
+                  if (condition) {
+                    // do something
+                  } else if (condition2) {
+                    // do something else
+                  } else {
+                    // otherwise do this
+                  }
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide">
+          <h2>Testing Conditions</h2>
+          <p>What does a condition actually look like?</p>
+          <p class="highlight-color">File: examples/013-testing-conditions.html</p>
+          <div data-markdown>
+            ```javascript
+            // Straight Booleans
+            if ( true ) {
+              document.write( "#1 this works. <br />" );
+            }
+            if ( false ) {
+              document.write( "#2 will not work. <br />" );
+            }
+
+            // Booleans via variables
+            var isSunday = true;
+            var isSaturday = false;
+            if ( isSunday == true ) {
+              document.write( "#3 Yeah, laundry day! <br />" );
+            }
+            if ( isSaturday == true ) {
+              document.write( "#4 Nope, you can't go back in time! <br />" );
+            }
+
+            // Numbers
+            if ( 1 < 2 ) {
+              document.write( "#5 works. <br />" );
+            }
+            if ( 2 < 1 ) {
+              document.write( "#6 won't work. <br />" );
+            }
+
+            // Strings
+            var emptyString = "";
+            var filledString = "Woot! Conditionals!";
+            if ( emptyString == "" ) {
+              document.write( "#7 Yep, the string was empty. <br />" );
+            }
+            if ( filledString == "" ) {
+              document.write( "#8 won't work. <br />" );
+            }
+            if ( filledString == "Woot! Conditionals!" ) {
+              document.write( "#9 Code strong. <br />" );
+            }
+            ```
+          </div>
+          <a href="examples/013-testing-conditions.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Cheat Sheet: Comparison and Logical Operators </h2>
+          <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Here's a <span class="highlight-text">cheat sheet</span> of different operators that can be used in conditional statements. </p>
+
+          <p data-markdown>Using these two variables, `var two = 2` and `var ten = 10`, the examples below show how the statements would return true using the various operators. </p>
+          <table cellspacing="0" class="comparison-table" style="margin-right:20px;width:50%;">
+            <tr>
+              <th align="left" colspan="3">Comparison operators</th>
+            </tr>
+            <tr>
+              <td width="15%">==</td>
+              <td width="50%">is equal to</td>
+              <td width="35%">ten == two * 5</td>
+            </tr>
+             <tr>
+              <td width="15%">===</td>
+              <td width="50%">is exactly equal to (value and type) </td>
+              <td width="35%">ten === 10<br />ten === "10" (false) </td>
+            </tr>
+             <tr>
+              <td width="15%">!=</td>
+              <td width="50%">is not equal to</td>
+              <td width="35%">ten !== two</td>
+            </tr>
+             <tr>
+              <td width="15%">&gt;</td>
+              <td width="50%">greater than</td>
+              <td width="35%">ten &gt; two</td>
+            </tr>
+              <tr>
+              <td width="15%">&lt;</td>
+              <td width="50%">less than</td>
+              <td width="35%">two &lt; ten</td>
+            </tr>
+              <tr>
+              <td width="15%">&gt;=</td>
+              <td width="50%">greater than or equal to</td>
+              <td width="35%">ten &gt;= two * 5<br />ten &gt;= two * 5 + 1</td>
+            </tr>
+              <tr>
+              <td width="15%">&lt;=</td>
+              <td width="50%">less than for equal to</td>
+              <td width="35%">two &lt;= ten<br />two &lt;= 2 </td>
+            </tr>
+          </table>
+          <table cellspacing="0" class="comparison-table" style="width:45%;">
+            <tr>
+              <th align="left" colspan="3">Logical operators</th>
+            </tr>
+            <tr>
+              <td width="15%">&amp;&amp;</td>
+              <td width="50%">and</td>
+              <td width="35%">(ten < 11 &amp;&amp; ten > 9)</td>
+            </tr>
+             <tr>
+              <td width="15%">===</td>
+              <td width="50%">or</td>
+              <td width="35%">(ten == 10 || two == 2)</td>
+            </tr>
+             <tr>
+              <td width="15%">!=</td>
+              <td width="50%">not</td>
+              <td width="35%"> !(ten == two)</td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide">
+          <h2>More Conditional Examples</h2>
+          <p>Let's look at some examples. What do you think the output will be? Uncomment the code to be executed for each condition to see if the result is what you expected. Try changing the variable values too! </p>
+          <p class="highlight-color">File: examples/014-more-conditional-examples.html</p>
+          <div data-markdown>
+            ```javascript
+            var regularPrice = 200;
+            var salePrice = 19.99;
+
+            if ( salePrice < regularPrice ) {
+              //document.write("#1 You've got to buy that robot! <br />");
+            }
+
+
+            if ( salePrice > regularPrice ) {
+              //document.write("#2 Don't buy that robot <br />");
+            } else {
+              //document.write("#2 Buy two in different colours! <br />");
+            }
+
+            if ( salePrice > regularPrice ) {
+              //document.write("#3 Don't buy that robot");
+            } else if ( salePrice == regularPrice) {
+              //document.write("#3 Only buy it if you reeeaallly want it! <br />");
+            } else {
+              //document.write("# Buy two in different colours! <br />");
+            }
+            ```
+          </div>
+          <a href="examples/014-more-conditional-examples.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Variables, Operators, Concatenation and Conditionals</h2>
+          <p>Now that we know what <span class="highlight-text">variables</span>, <span class="highlight-text">operators</span> and <span class="highlight-text">conditionals</span> are, let's put them all into action using dynamic content. </p>
+          <p class="highlight-color">File: examples/015-variables-operations-concatenation-conditionals.html</p>
+          <div data-markdown>
+            ```javascript
+            var price = prompt("How much is that robot?");
+              if ( price <= 100 ) {
+              document.write("$" + price + " isn't bad. Buy it!");
+            } else {
+              document.write("$" + price + "? Jeez! That's a lot of money!");
+            }
+            ```
+          </div>
+          <a href="examples/015-variables-operations-concatenation-conditionals.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Mini-exercise #3 (10 minutes)</h2>
+          <p> Uh-oh! Someone can attempt to put a negative number of products in their shopping cart! Complete task #1 in the next slide to fix this. For task #2, warn the user that they are attempting to check out with an empty basket. Make a more robust shopping cart so that your customer's order doesn't go sideways. </p>
+          <p>This is based on Exercise #3 so it should look very familiar! </p>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>(Hint: How do you test if a number is greater than, less then, or equal to another number?)</small>
+        </section>
+
+        <section class="slide">
+          <h2>Mini-exercise #3 (10 minutes)</h2>
+          <p>TODO: Check within the code for your THREE tasks.</p>
+          <p class="highlight-color">File: exercises/3-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            var quantity = 0;
+
+            function addItem(){
+              quantity++;
+              refreshTotal();
+            }
+
+            function removeItem(){
+              /* *** YOUR CODE _BELOW_ HERE **** */
+              /* 1. Use a conditional if/else statement on the "quantity" variable
+                    to avoid having negative products. */
+
+              quantity--;
+
+              /* *** YOUR CODE ^ABOVE^ HERE **** */
+              refreshTotal();
+            }
+
+            function checkout() {
+              /* *** YOUR CODE _BELOW_ HERE **** */
+              /* 2. Use a conditional if statement on the "quantity" variable
+                    to determine if the shopping cart is (or is not) empty. */
+
+              // below are some alert messages you can use
+              alert( "Sorry, you don't have anything in your cart!" );
+              alert( "Thank you for your order!" );
+
+              /* *** YOUR CODE ^ABOVE^ HERE **** */
+            }
+
+            function refreshTotal() {
+              var totalCost = quantity * 20; //quantity * fixed price
+              document.getElementById('updateQuantity').value = quantity; //updates
+              // 3. A nice to have: Put a dollar sign in front of the totalCost
+              document.getElementById('updateTotal').value = (totalCost);
+            }
+            ```
+          </div>
+          <a href="exercises/3-mini-exercise-problem.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+
         </section>
 
         <section class="slide">
