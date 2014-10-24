@@ -1188,7 +1188,115 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
         </section>
 
         <section class="slide">
-          <h2>Conditionals used for UI elements</h2>
+          <h2>Mini-exercise #4 (5-10 minutes)</h2>
+          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>TODO: Check within the code for your ONE task.</small>
+
+          <p class="highlight-color">File: exercises/4-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            function validateForm() {
+
+              // automagically get the typed values from the form
+              var address = document.getElementById("address").value;
+
+              /* *** YOUR CODE _BELOW_ HERE **** */
+
+              /* TODO: Use a conditional if/else statement on the "address" variable
+                 to determine if the address field is (or is not) blank,
+                 then show the proper error or confirmation alert message. */
+
+              // below are some alert messages you can use
+              alert( "Sorry there are errors. Form fields cannot be blank!" );
+              alert( "Thank you for your order!" );
+
+              /* *** YOUR CODE ^ABOVE^ HERE **** */
+            }
+            ```
+          </div>
+          <a href="exercises/4-mini-exercise-problem.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Mini-exercise #5 (15-20 minutes)</h2>
+          <p>Now here's a more complex shopping form that you require all fields to be filled in. You have been supplied with 3 additional variables which will automagically update: "name", "city", and "postal".</p>
+
+          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/> (Hint for task #3: How do you test for something AND somethingElse OR anotherThing at one time?) </small>
+
+          <p>Bonus: There's always different ways to get to the same end goal. If you're finished early, try out different ways that you can reduce the number of variables and lines of code.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Mini-exercise #5 (15-20 minutes)</h2>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
+
+          <p class="highlight-color">File: exercises/5-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            function validateForm() {
+
+              // automagically get the typed values from the form
+              var name = document.getElementById("name").value;
+              var address = document.getElementById("address").value;
+              var city = document.getElementById("city").value;
+              var postal = document.getElementById("postal").value;
+
+              /* *** YOUR CODE _BELOW_ HERE **** */
+
+              /* 1. Declare 4 variables named
+                    "nameIsBlank", "addressIsBlank", "cityIsBlank", and "postalIsBlank"
+                    that will each hold Boolean values. */
+
+
+              /* 2a. Use conditional if/else statements on the variables
+                     "name", "address", "city", and "postal" to determine
+                     if each individual field is not blank.
+
+                 2b. Update their respective Boolean variables based on their
+                     individual if/else statements. */
+
+
+              /* 3. In a final conditional, test ALL FOUR fields
+                    and alert the proper message  */
+
+              // below are some alert messages you can use
+              alert( "Sorry there are errors. Form fields cannot be blank!" );
+              alert( "Thank you for your order!" );
+
+              /* *** YOUR CODE ^ABOVE^ HERE **** */
+            }
+            ```
+          </div>
+          <a href="exercises/5-mini-exercise-problem.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide centered">
+          <h1>Regroup Before Lunch</h1>
+          <h2>Learn from our mistakes!</h2>
+          <p>Name something that you did while writing code that caused an error. What were you attempting to do and what were your assumptions when doing it? How did you fix it?
+
+What are some questions or issues you are having with the material covered so far? Lunch with your mentors and pick their brains. :) </p>
+        </section>
+
+        <section class="slide">
+          <h2>What kind of neat stuff can you do with HTML5 and JavaScript? </h2>
+          <p><img src="framework/img/Chrome-Experiments-Arcade-Fire.gif" alt="Arcade Fire" /></p>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
+        </section>
+
+        <section class="slide">
+          <h2>Some JavaScript Inspiration...</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Some JavaScript Inspiration...</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Some JavaScript Inspiration...</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Some JavaScript Inspiration...</h2>
         </section>
 
         <section class="slide title">
