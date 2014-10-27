@@ -93,6 +93,17 @@
           </p>
         </section>
 
+        <section class="slide centered">
+          <h1>Using a Code Editor</h1>
+
+          <p>TODO: Instructions</p>
+
+          <p>
+            <a href="http://www.sublimetext.com/"><img width="200"  src="framework/img/brackets-logo.png" alt="Sublime Text"/></a>
+            <a href="http://www.sublimetext.com/"><img width="200" src="framework/img/atom-logo.png" alt="Sublime Text"/></a>
+          </p>
+        </section>
+
         <section class="slide title">
           <h1>Technology Overview</h1>
           <h2>Programming and JavaScript</h2>
@@ -1362,7 +1373,7 @@ What are some questions or issues you are having with the material covered so fa
             ```javascript
             //define function
             function sayMyName() {
-              alert("Angelina");
+              alert("Florida");
             }
             ```
           </div>
@@ -1540,11 +1551,220 @@ Let's order another pizza. </p>
         <section class="slide">
           <h2>Review: Functions and Parameters</h2>
           <p>Functions are more flexible when used with parameters because variables can be passed into the function.</p>
-          <p>In the <code>makePizza()</code> function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
+          <p>In the makePizza() function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
+        </section>
+
+        <section class="slide centered">
+          <h2>Review: Functions and Parameters</h2>
+          <img src="framework/img/code-function-refactor.gif" alt="function refactor" />
+        </section>
+
+        <section class="slide title">
+          <h1>JavaScript Theory Applied</h1>
+          <h2>Putting it together on an actual HTML page</h2>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>Inline JavaScript</h2>
+          <p>JavaScript can appear inline in a webpage in several spots. Either in the <code>&lt;head&gt;</code> section or anywhere in the <code>&lt;body&gt;</code> section. </p>
+          <pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!&lt;/title>
+    &lt;script type="text/javascript">
+      alert("I'm in the head tag!");
+    &lt;/script>
+  &lt;/head>
+  &lt;body>
+    &lt;div id="example">This is an example.&lt;/div>
+    &lt;script type="text/javascript">
+      alert("I'm in the body tag!");
+    &lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+
+          <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Need to manipulate an html tag or have a quick loading page? Put the JavaScript just before the <span class="highlight-text">closing</span> <code>&lt;body&gt;</code> tag. </p>
+        </section>
+
+        <section class="slide centered">
+          <h2>Objects</h2>
+          <p>If variables are boxes, OBJECTS can be thought of as bento boxes -- "advanced variables" if you will.</p>
+          <img src="framework/img/bento_box_real.jpg" alt="bento box real"/>
+        </section>
+
+        <section class="slide">
+          <h2>How Bento Boxes are like Objects</h2>
+          <table cellpadding="30">
+            <tr>
+              <td><img src="framework/img/variable-rice.png" alt="rice variable" style="width: 400px" /></td>
+              <td>
+                <p>A basic variable only holds one value.</p>
+                <pre> <code>var takeout = "Fried Rice";</code> </pre>
+              </td>
+            </tr>
+             <tr>
+              <td><img src="framework/img/object-bento-box.png" alt="bento box object" /></td>
+              <td>
+                <p>An object holds a collection of values.</p>
+                <div data-markdown>
+                  ```javascript
+                  // create a new object
+                  var bentobox = {};
+
+                  // fill it with stuff
+                  bentobox.main = "Teriyaki";
+                  bentobox.side = "Tempura";
+                  bentobox.salad = "Seaweed Salad";
+                  bentobox.sushi = "Salmon Avocado Roll";
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide centered">
+          <h2>Creating an Object</h2>
+          <img src="framework/img/syntax-object.gif" alt="syntax object"/>
+        </section>
+
+        <section class="slide">
+          <h2>Creating an Object</h2>
+          <p>Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
+          <p>But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
+          <pre><code>var bentobox = {};</code></pre>
+          <small>Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
+
+        </section>
+
+      <section class="slide">
+          <h2>Object Properties</h2>
+          <p>The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
+          <p>If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
+
+          <table cellpadding="20">
+            <thead>
+              <td>Dot notation:</td>
+              <td>Key-Value Lookup:</td>
+            </thead>
+            <tr>
+              <td>
+                <pre><code>myObject.property = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox.main = "Teriyaki";
+                  bentobox.side = "Tempura";
+                  ```
+                </div>
+              </td>
+              <td>
+                <pre><code>myObject[key] = value; </code></pre>
+                <div data-markdown>
+                  ```javascript
+                  bentobox["main"] = "Teriyaki";
+                  bentobox["side"] = "Tempura";
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+          <small><b>Advanced sidenote:</b></small>
+          <br />
+          <small>Alternatively, you can both declare an object and set it's values at the <b>same</b> time: </small>
+          <br />
+          <code>var bentobox = { soup:"Miso", main:"Teriyaki" };</code>
+        </section>
+
+        <section class="slide">
+          <h2>Why use Objects?</h2>
+          <p><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
+          <p>There's an <b>expectation</b> of what you'll get in a bento box. </p>
+          <p>Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
+          <img src="framework/img/object-bento-box.png" width="45%" alt=""/>
+          <img src="framework/img/object-bento-box-2.png" width="45%" alt=""/>
+        </section>
+
+        <section class="slide">
+          <h2>Think of Everything as an Object*</h2>
+          <p>When I said that objects were "advanced variables", here's another way of looking at it:</p>
+          <p><b>All JavaScript variables can be treated like objects too.</b></p>
+          <p>If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
+          <img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
+          <div data-markdown>
+            ```javascript
+            var stringObject = “ ”;
+            var arrayObject = [ ];
+            ```
+          </div>
+          <p>Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Built-in JavaScript Properties</h2>
+          <p>In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
+          <p>Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
+          <div data-markdown>
+            ```javascript
+            var firstName = "Florida";
+
+            var numberOfLetters = firstName.length;
+            document.write( numberOfLetters );
+            ```
+          </div>
+
+        </section>
+
+        <section class="slide">
+          <h2>Functions in Objects</h2>
+          <p>Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
+          <table cellspacing="0" width="100%">
+            <thead>
+              <td colspan="2">This function...</td>
+              <td>is the same as:</td>
+            </thead>
+            <tr>
+              <td data-markdown>
+                ```javascript
+                function sayHello(){
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+              <td>➞</td>
+               <td data-markdown>
+                ```javascript
+                var sayHello = function() {
+                  document.write("hello");
+                }
+
+                sayHello();
+                ```
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>
+                <p style="text-align: center">ↆ</p>
+                <p>But now look at this!</p>
+                <div data-markdown>
+                  ```javascript
+                  var welcomeTeam = {};
+                  welcomeTeam.sayHello = function() {
+                  document.write("hello");
+                  }
+                  welcomeTeam.sayHello();
+                  ```
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="slide">
+          <h2>Object Methods</h2>
+          <p>When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
+          <p>Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
         </section>
 
         <section class="slide">
@@ -1565,7 +1785,7 @@ Let's order another pizza. </p>
 
         <section class="slide title">
           <h1>Title Slide Example: add a title class to section tag</h1>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Statements are comma</small>
 
           <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
           <div data-markdown>
