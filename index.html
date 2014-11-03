@@ -1765,18 +1765,59 @@ Let's order another pizza. </p>
           <h2>Object Methods</h2>
           <p>When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
           <p>Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
+          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            var salePrice1 = 20.00 * 0.50;
+            var salePrice2 = 35.00 * 0.50;
+            var salePrice3 = 25.99 * 0.50;
+
+            //uh-oh, can we make sure we always see 2 decimal spaces?
+            document.write( salePrice1 );
+            document.write( "<br />" );
+            document.write( salePrice2 );
+            document.write( "<br />" );
+            document.write( salePrice3 );
+            ```
+          </div>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>Looking up properties and references</h2>
+          <p><code>length</code> and <code>toFixed()</code> are only two of many (many!) more built-in properties and methods of objects in JavaScript.</p>
+          <p>Check out this list: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index">https://developer.mozilla.org/en-US/docs/JavaScript_Methods_Index.</a> </p>
+          <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>Arrays</h2>
+          <p><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
+          <p>Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
+          <!--TODO: Image or eggs -->
+          <p>Just like variables and objects, declare an array with the keyword var.</p>
+          <pre><code>var eggspressions = [];</code></pre>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>Arrays How-to</h2>
+          <pre><code>//declaring an empty array
+var eggspressions = [];</code></pre>
+          <div data-markdown>
+            ```javascript
+            //assigning values
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            ```
+          </div>
+        <p>The numbers inside the square brackets <code>[ ]</code> are referred to as the <span class="highlight-text">index</span> number. Array indexes <span class="highlight-text">always</span> start at <span class="highlight-text">zero</span>. </p>
+        <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Arrays can be declared in different ways.<br />
+          The above example can also be declared like this:<br />
+          <code>var eggspressions = ["skeptical","frazzled","silly", "giggling"];</code>
+        </small>
         </section>
 
         <section class="slide">
