@@ -1900,19 +1900,63 @@ var eggspressions = [];</code></pre>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2> REWIND: Arrays &amp; Length and the 0 Index </h2>
+          <div data-markdown>
+            ```javascript
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+            ```
+          </div>
+          <p>Let's break it down.</p>
+          <ul>
+            <li><code>eggspressions.length</code> returns 4</li>
+            <li>index of last element is 3</li>
+            <li><code>eggspressions.length-1</code> is the same as 4 - 1 and will return 3</li>
+            <li><code>eggspressions[3]</code> returns the last value</li>
+            <li><code>eggspressions[eggspressions.length-1]</code> is the same as <code>eggspressions[3]</code></li>
+          </ul>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>How is this useful?</h2>
+          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            var eggspressions = [];
+            eggspressions[0] = "skeptical";
+            eggspressions[1] = "frazzled";
+            eggspressions[2] = "silly";
+            eggspressions[3] = "giggling";
+
+            document.write(eggspressions[3] + " is the last element in the array. <br />");
+            document.write(eggspressions[eggspressions.length-1] + " is the last element in the array.");
+            ```
+          </div>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>Loops</h2>
+          <p>Why use loops? Because sometimes we need to <span class="highlight-text">execute repetitive code</span> for a specified number of times or through a list of values. </p>
+          <p>Loops will execute the same code continuously, using conditional statements to determine when to begin and stop. </p>
+          <p>It's like creating a playlist on your favorite music player.</p>
+          <p>You create a list of songs, press play and then each song is played automatically in the set order of the playlist. When it reaches the end of the playlist, it stops</p>
+          <p>We will be discussing <code>while loops</code> and for <code>loops</code>.</p>
         </section>
 
-        <section class="slide">
-          <h2>Sub-heading example</h2>
+        <section class="slide centered">
+          <h2>While Loop Syntax</h2>
+          <br /><br />
+          <img class="delayed" src="framework/img/syntax-while.gif" alt="while loop" />
+        </section>
+
+       <section class="slide">
+          <h2>While Loop</h2>
+          <p>The WHILE LOOP executes the code contained in curly braces { } while the condition is true.</p>
         </section>
 
         <section class="slide">
