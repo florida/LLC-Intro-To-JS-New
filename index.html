@@ -1956,15 +1956,68 @@ var eggspressions = [];</code></pre>
 
        <section class="slide">
           <h2>While Loop</h2>
-          <p>The WHILE LOOP executes the code contained in curly braces { } while the condition is true.</p>
+          <p>The <span class="highlight-text">WHILE LOOP</span> executes the code contained in curly braces <code>{ }</code> <span class="highlight-text">while</span> the condition is true.</p>
+          <p>An index variable is required to keep track of its place in the loop.</p>
+          <p>The <span class="highlight-text">WHILE LOOP</span> stops executing the code once the condition becomes false.</p>
+          <p>If you had 10 songs in your playlist, the player won't stop until it reaches the end of song 10.</p>
+          <div data-markdown>
+          ```javascript
+          //declare index variable
+          var i = 0;
+
+          while ( i < playlist.length ) {
+            playCurrentSong();
+            i = i + 1; // adds 1 to the current index so it moves to the next song
+          }
+          ```
+          </div>
+
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
         </section>
 
         <section class="slide">
-          <h2>Sub-heading example</h2>
+          <h2>While Loop in Action!</h2>
+          <p>Let's use the <span class="highlight-text">WHILE LOOP</span> to output the mathematical formula for converting Celsius to Fahrenheit.</p>
+          <p>(The formula is: <code>Temperature = Temperature * 9 / 5 + 32</code>)</p>
+          <p>This next example uses a <span class="highlight-text">WHILE LOOP</span> to output the results of the temperature formula into HTML table rows that are also added dynamically.</p>
+          <p>It will stop when we reach 30 degrees Celsius (or whatever number is declared in the condition).</p>
+          <p>See next slide for the example.</p>
         </section>
 
-        <section class="slide">
-          <h2>Sub-heading example</h2>
+         <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+          <p>Let's look at the temperature conversion table with and without JavaScript and compare the difference in the amount of repetitive code required to create a table like this manually.</p>
+          <p>Conversion table using a <a href="exercises/temperature.html">while loop</a>.</p>
+          <p>Conversion table <a href="exercises/temperature-nojs.html">without JavaScript</a>.</p>
+          <p>View source and compare the difference between the amount of code.</p>
+          <img src="framework/img/while-loop.jpg" alt="while loop source code" />
+          <img src="framework/img/no-while-loop.jpg" alt="no while loop source code" />
+        </section>
+
+       <section class="slide">
+          <h2>For Loops</h2>
+          <p>A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
+          <p>The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
+        </section>
+
+       <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+        </section>
+
+       <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+        </section>
+
+       <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+        </section>
+
+       <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
+        </section>
+
+       <section class="slide">
+          <h2>While Loop Temperature Conversion</h2>
         </section>
 
         <section class="slide title">
@@ -1978,6 +2031,7 @@ var eggspressions = [];</code></pre>
             ```
           </div>
           <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <img src="framework/img/rawbot-run.png" alt="run code" />
         </section>
 
         <section class="slide title">
