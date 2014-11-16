@@ -1994,30 +1994,302 @@ var eggspressions = [];</code></pre>
           <img src="framework/img/no-while-loop.jpg" alt="no while loop source code" />
         </section>
 
+        <section class="slide centered">
+          <h2>For Loop Syntax</h2>
+          <br /><br />
+          <img class="delayed" src="framework/img/syntax-for.gif" alt="while loop" />
+        </section>
+
        <section class="slide">
           <h2>For Loops</h2>
           <p>A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
           <p>The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
+          <div data-markdown>
+            ```javascript
+            /* While Loop */
+            var i = 0; //index
+            while ( i < playlist.length ) { //condition
+              playCurrentSong();
+              i = i + 1; // incrementer
+            }
+            ```
+          </div>
+          <div data-markdown>
+            ```javascript
+            /* For Loop */
+            // index, condition, incrementer
+            for ( var i = 0; i < playlist.length; i++ ) {
+              playCurrentSong();
+            }
+            ```
+          </div>
+          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>
+            Incrementer (i++) and decrementer (i--) operators add or subtract one.<br />
+            i++ is the same as i = i + 1<br />
+            i-- is the same as i = i - 1<br />
+          </small>
         </section>
 
        <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
+          <h2>For Loops and Arrays</h2>
+          <p><span class="highlight-text">FOR LOOPS</span> are useful when used in conjunction with <span class="highlight-text">ARRAYS</span> because they can be used to execute specific actions while going through the list of values.</p>
+          <p>Back to our robot store. It wouldn't be much of a store if there was only one product! We can create a list of different products with various prices by creating an array.</p>
+          <div data-markdown>
+          ```javascript
+          var productPrices = [];
+          productPrices[0] = 17.99;
+          productPrices[1] = 25;
+          productPrices[2] = 13.99;
+          productPrices[3] = 9.99;
+          productPrices[4] = 24.99;
+          productPrices[5] = 8.99;
+          ```
+          </div>
         </section>
 
        <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
+          <h2>For Loops, Arrays, Robots and Sales</h2>
+          <p>Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
+          <div data-markdown>
+            ```javascript
+            var productPrices = [];
+            productPrices[0] = 17.99;
+            productPrices[1] = 25;
+            productPrices[2] = 13.99;
+            productPrices[3] = 9.99;
+            productPrices[4] = 24.99;
+            productPrices[5] = 8.99;
+
+            for (i=0; i < productPrices.length; i++) {
+              var value = productPrices[i];
+              if (value > 15){
+                document.write("Product " + (i+1) + " is on sale.<br />");
+              } else {
+                document.write("Product " + (i+1) + " is not on sale.<br />");
+              }
+            }
+            ```
+          </div>
         </section>
 
        <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
+          <h2>Mini-exercise #6 (10-15 minutes)</h2>
+          <p>As owner of Planet Robot, you decide to have a special members-only sale: 50% off all items with a secret password! (p.s. the password is "llc"!)</p>
+          <p>Sounds like a great deal for the customer, but all you have is a static HTML page right now. Are you going to go through every single product, calculate the discounted price, and then update every entry manually? No, you're going to use loops and arrays!</p>
+          <p>Download the HTML exercise file: <a href="exercises/shopping_cart_products_start.html">exercises/shopping_cart_products_start.html</a></p>
+          <p class="highlight-color">TODO: Check within the code for your THREE tasks.</p>
+          <small>If you're stuck, here's the solution file: <a href="assets/exercises/shopping_cart_products_final.html">assets/exercises/shopping_cart_products_final.html</a></small>
         </section>
 
-       <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
+        <section class="slide title">
+          <h1>Regroup before break</h1>
+          <h2>Share your mistakes so we can learn from each other!</h2>
         </section>
 
-       <section class="slide">
-          <h2>While Loop Temperature Conversion</h2>
+        <section class="slide title">
+          <h1>Break time!</h1>
+          <h2>Come back in 15 minutes</h2>
+        </section>
+
+        <section class="slide title">
+          <h1>Document Object Model (DOM)</h1>
+          <h2>Manipulating objects on a real HTML page</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Manipulating objects on a real HTML page</h2>
+          <p>Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Manipulating objects on a real HTML page</h2>
+          <p>Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
+          <p style="text-align:center"><img src="framework/img/browser-blocks.jpg" alt="browser blocks" />
+        </p>
+      </section>
+
+        <section class="slide">
+          <h2>Pre-defined Blocks</h2>
+          <p>Some blocks are defined by the browser, such as the browser <span class="highlight-text">window</span>.</p>
+          <p style="text-align:center"><img src="framework/img/browser-window.jpg" alt="browser window" />
+        </section>
+
+        <section class="slide">
+          <h2>Document Objects</h2>
+          <p>All of these blocks are <span class="highlight-text">OBJECTS</span> -- just like the ones we covered earlier! And all these objects have pre-written functions/methods you can use.</p>
+          <p>Does the line of code below make more sense now? <code>document</code> is one of the main objects of a web page and it has a method named <code>write</code> that accepts a string as a parameter. document has lots of other properties and methods too: <a href="http://dochub.io/#dom/document">check out this list</a>.</p>
+          <div data-markdown>
+            ```javascript
+            document.write("Hello!");
+            ```
+          </div>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects</h2>
+          <p>The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
+          <small>(It's important that your HTML tag has an id attribute in order to do this!)</small>
+          <p>For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
+          <pre><code>&lt;p id="text" style="border: 1px solid red;">
+  Loading...
+&lt;/p>
+
+&lt;script>
+
+&lt;/script></code></pre>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects (cont'd)</h2>
+          <p>You can also use innerHTML to replace what's already in a element.</p>
+          <pre><code>&lt;p id="text" style="border: 1px solid red;">
+  Loading...
+&lt;/p>
+
+&lt;script>
+  var existingElement = document.getElementById("text");
+
+&lt;/script></code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>HTML Element Objects (cont'd)</h2>
+          <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
+          <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
+
+&lt;script>
+
+&lt;/script></code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>Updating CSS Styles</h2>
+          <p>You can even update an HTML element's CSS styles dynamically using its style property.</p>
+          <p>Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
+          <pre><code>&lt;style>
+  #clickme {
+    text-align: center;
+    width: 100px;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+&lt;/style>
+
+&lt;div id="clickme" onclick="restyle();">
+Click me!
+&lt;/div>
+
+&lt;script>
+  var button = document.getElementById("clickme");
+  function restyle() {
+    if ( button ) {
+
+    } else {
+
+    }
+  }
+&lt;/script></code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>Make DOM Elements Magically Appear!</h2>
+          <p>You can even create completely new elements out of thin air! Use <code>document.createElement()</code> and <code>appendChild()</code>;</p>
+
+          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <pre><code>&lt;div id="emptyDiv" style="border: 1px solid red; padding: 10px;">
+&lt;/div>
+
+&lt;script>
+  // create a new paragraph out of thin air
+
+  //insert it into the currently empty div
+
+&lt;/script></code></pre>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+
+        </section>
+
+        <section class="slide title">
+          <h1>Going Beyond JavaScript Basics</h1>
+          <h2>You're getting to be quite the pro!</h2>
+        </section>
+
+        <section class="slide title">
+          <h1>Debugging!</h1>
+          <h2>Squash those crawly things in your code.</h2>
+        </section>
+
+        <section class="slide">
+          <h2>What's a Bug?</h2>
+          <p>As the <a href="http://en.wikipedia.org/wiki/Grace_Hopper#Anecdotes">story goes</a>, the term "software bug" got its name because a real moth flew into a computer system causing strange, unexpected behaviours to happen in a computer program.</p>
+          <p>Nowadays, bugs are mostly due to human error in one of two areas:</p>
+          <ol>
+            <li>Syntax - missing semi-colons, typos, case-sensitivity</li>
+            <li>Logic - trying to access a variable that doesn't exist yet, writing an incorrect conditional test</li>
+          </ol>
+          <p>Luckily there's a few things to help us hunt them down quicker...</p>
+        </section>
+
+        <section class="slide">
+          <h2>Chrome Developer Console (and Firefox Developer Tools)</h2>
+          <p>Use the built in developer tools in Chrome to debug your code. (Firefox is similar but not exactly the same.)</p>
+          <img src="framework/img/ChromeConsole.png" alt="Chrome Console" />
+        </section>
+
+        <section class="slide">
+          <h2>Right click > Inspect Element</h2>
+          <p>Easiest way to remember is to right-click on any web page and select "Inspect Element". In the new panel, select the "Console" tab to see JavaScript errors or to play in the console sandbox.</p>
+          <img src="framework/img/ChromeInspector.gif" alt="Chrome Inspector" />
+        </section>
+
+        <section class="slide">
+          <h2>Inspecting the DOM</h2>
+          <p>You can inspect any webpage with the debugger.</p>
+          <p>Let's open up the Ladies Learning Code Events page: <a href="http://ladieslearningcode.com/events/">http://ladieslearningcode.com/events/</a>.</p>
+          <p>How can we use the console to find out how many events are listed on this page?</p>
+        </section>
+
+        <section class="slide">
+          <h2>&lt;script src=""></h2>
+          <p>As you write bigger pieces of JavaScript, you will want to start putting your code into their own files so they are easier to manage. Or you might want to enlist the help of others to write JavaScript for your website so you can work on different sections separately. A big site could have thousands of lines of code written by many different people!</p>
+          <p>To link to an external JavaScript file:</p>
+          <pre><code>&lt;html>
+  &lt;head>
+    &lt;title>JavaScript example!</title>
+  &lt;/head>
+  &lt;body>
+    &lt;div id="example">This is an example.</div>
+    &lt;script type="text/javascript" src="scripts.js">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>In the external file</h2>
+          <p>In the <a href="exercises/scripts.js">external JavaScript file (scripts.js)</a> you don't include script tags; just JavaScript code.</p>
+          <p>View this example: <a href="assets/exercises/external-javascript.html">assets/exercises/external-javascript.html</a></p>
+        </section>
+
+        <section class="slide">
+          <h2>script tag gotchas</h2>
+          <p>Even though you're not writing JavaScript between the script tags, you must use a closing </script> tag. A self-closing tag such as <script src="scripts.js" /> will not work. The correct way is highlighted below:</p>
+        </section>
+
+        <section class="slide">
+          <h2>External JavaScript</h2>
+        </section>
+
+        <section class="slide">
+          <h2>External JavaScript</h2>
+        </section>
+
+        <section class="slide">
+          <h2>External JavaScript</h2>
         </section>
 
         <section class="slide title">
