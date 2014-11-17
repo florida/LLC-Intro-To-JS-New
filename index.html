@@ -370,7 +370,7 @@ document.write("Hello, " + name);</code></pre>
           <div class="delayed">
             <pre><code>prompt("What's your name?");
 document.write("Hello....?");</code></pre>
-            <a href="examples/001-what-is-your-name.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+            <a href="examples/001-what-is-your-name.html" class="run-button">Run</a>
           </div>
         </section>
 
@@ -427,16 +427,19 @@ var isSunday = true;</code></pre>
           <p>Variables cannot start with a number or any special characters except for underscores (_) and dollar signs ($). </p>
           <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Although it's valid to use underscore or a dollar sign, it is not used often
 and usually only in special circumstances. </p>
-          <div data-markdown>
-            ```javascript
-            var 3hundred = 300;
-            console.log(3hundred);
+          <br />
+          <div class="delayed">
+            <div data-markdown>
+              ```javascript
+              var 3hundred = 300;
+              console.log(3hundred);
 
-            //var $1000 = 1000;
-            //document.write($1000);
-            ```
+              //var $1000 = 1000;
+              //document.write($1000);
+              ```
+            </div>
+            <a href="examples/002-tips-best-practices.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
           </div>
-          <a href="examples/002-tips-best-practices.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -484,7 +487,8 @@ and usually only in special circumstances. </p>
             //but not the same as
             var name = "Ladies     Learning       Code";
             ```
-          </div>          <div data-markdown>
+          </div>
+          <div data-markdown>
             ```javascript
             alert("Whitespace     in    a    string.");
             document.write("Whitespace     in    a    string.");
@@ -586,6 +590,7 @@ and usually only in special circumstances. </p>
           <h2>Shopping Cart: Totals and Discounts</h2>
           <p>Let's try applying some arithmetic operations to our shopping cart.</p>
           <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>addition (+), subtraction (-), multiplication (*), division (/)</small>
+          <p class="highlight-color">File: examples/007-shopping-cart.html</p>
           <div data-markdown>
             ```javascript
             var tshirtPrice = 25;
@@ -731,6 +736,7 @@ and usually only in special circumstances. </p>
           <h2>Concatenation and Strings</h2>
           <p>If you use the (+) operator with numerical values, it will add the values. Otherwise, it will combine the outputs as a string.</p>
           <p>Only the addition (+) operator can be used to combine strings. </p>
+          <p class="highlight-color">File: examples/011-concatenation-and-strings.html</p>
           <div data-markdown>
             ```javascript
             //Addition with the + operator
@@ -756,7 +762,6 @@ and usually only in special circumstances. </p>
 
         <section class="slide">
           <h2>Concatenation in action (results)</h2>
-          <p class="highlight-color">File: examples/012-concatenation-in-action.html</p>
           <div data-markdown>
             ```javasript
             var quantity = 0;
@@ -811,10 +816,6 @@ and usually only in special circumstances. </p>
           </ul>
           <p>All these things make logical sense to us as grown up humans but computers are a blank slate. The last one is a little closer to the simple instructions that a computer needs.</p>
           <p>As a programmer, you tell the computer how to behave across certain states or events by using CONDITIONALS.</p>
-        </section>
-
-        <section class="slide">
-          <h2>If Conditionals</h2>
         </section>
 
         <section class="slide centered">
@@ -974,7 +975,6 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
         <section class="slide">
           <h2>Testing Conditions</h2>
           <p>What does a condition actually look like?</p>
-          <p class="highlight-color">File: examples/013-testing-conditions.html</p>
           <div data-markdown>
             ```javascript
             // Straight Booleans
@@ -1085,6 +1085,11 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
               <td width="35%"> !(ten == two)</td>
             </tr>
           </table>
+        </section>
+
+        <section class="slide">
+          <h2>Explain Logical Operators</h2>
+          <!--TODO: explain logical operators-->
         </section>
 
         <section class="slide">
@@ -1292,8 +1297,6 @@ What are some questions or issues you are having with the material covered so fa
           <h2>What kind of neat stuff can you do with HTML5 and JavaScript? </h2>
           <p><img src="framework/img/Chrome-Experiments-Arcade-Fire.gif" alt="Arcade Fire" /></p>
           <p class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot hint" height="50"/>Arcade Fire's interactive music video: <a href="http://www.chromeexperiments.com/arcadefire/">The Wilderness Downtown.</a></p>
-
-          <p>  </p>
         </section>
 
         <section class="slide title">
@@ -1311,7 +1314,7 @@ What are some questions or issues you are having with the material covered so fa
         </section>
 
         <section class="slide">
-          <h2>Functions & Methods</h2>
+          <h2>Functions &amp; Methods</h2>
           <p>What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
           <p><span class="highlight-text">Paying for parking:</span></p>
           <p>TODO: Better function example</p>
@@ -1364,7 +1367,7 @@ What are some questions or issues you are having with the material covered so fa
         </section>
 
         <section class="slide">
-          <h2>Functions & Events</h2>
+          <h2>Functions &amp; Events</h2>
           <p>The browser executes the JavaScript as soon as the page loads. </p>
           <p>But sometimes you need to control when it executes. For example, if someone rolls over a navigation menu or presses a Submit button. </p>
           <p>This is where functions also come into play.</p>
@@ -1391,6 +1394,7 @@ What are some questions or issues you are having with the material covered so fa
             ```
           </div>
 
+          <a href="examples/017-functions-and-events.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1468,6 +1472,7 @@ What are some questions or issues you are having with the material covered so fa
             orderPizza();
             ```
           </div>
+          <a href="examples/019-functions-and-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1487,6 +1492,7 @@ Let's order another pizza. </p>
           orderAnotherPizza();
           ```
           </div>
+          <a href="examples/020-more-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1518,10 +1524,14 @@ Let's order another pizza. </p>
           orderAnotherPizza();
           ```
           </div>
+          <a href="examples/021-global-vs-local-variables.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Functions, Pizza and Parameters</h2>
+          <p>This could get cumbersome if we wanted to make a lot of pizzas.  How can we re-use the <code>orderPizza()</code> function instead of creating multiple functions? We use <span class="highlight-text">PARAMETERS</span> or <span class="highlight-text">ARGUMENTS</span>.</p>
+          <p>Functions can be used with one parameter, more than one parameter or none at all.</p>
+          <p class="highlight-color">File: examples/022-functions-pizza-parameters.html</p>
           <div data-markdown>
             ```javascript
             var baseTopping = "cheese";
@@ -1545,13 +1555,13 @@ Let's order another pizza. </p>
             orderAnotherPizza();
             ```
           </div>
-
+          <a href="examples/022-functions-pizza-parameters.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
-          <h2>Review: Functions and Parameters</h2>
+          <h2>Functions and Parameters</h2>
           <p>Functions are more flexible when used with parameters because variables can be passed into the function.</p>
-          <p>In the makePizza() function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
+          <p>In the <code>orderPizza()</code> function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
         </section>
 
         <section class="slide centered">
@@ -1584,6 +1594,8 @@ Let's order another pizza. </p>
 
           <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Need to manipulate an html tag or have a quick loading page? Put the JavaScript just before the <span class="highlight-text">closing</span> <code>&lt;body&gt;</code> tag. </p>
         </section>
+
+        <!--Using a code editor.or correcting syntax slide-->
 
         <section class="slide centered">
           <h2>Objects</h2>
@@ -1711,6 +1723,7 @@ Let's order another pizza. </p>
             ```
           </div>
 
+          <a href="examples/023-built-in-javascript-properties.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1765,7 +1778,7 @@ Let's order another pizza. </p>
           <h2>Object Methods</h2>
           <p>When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
           <p>Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
-          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <p class="highlight-color">File: examples/024-object-methods.html</p>
           <div data-markdown>
             ```javascript
             var salePrice1 = 20.00 * 0.50;
@@ -1780,7 +1793,7 @@ Let's order another pizza. </p>
             document.write( salePrice3 );
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/024-object-methods.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1825,7 +1838,7 @@ var eggspressions = [];</code></pre>
           <p><span class="highlight-text">Index</span> numbers are used to <span class="highlight-text">assign</span> values. </p>
           <p>Index numbers are also used to <span class="highlight-text">access</span> values. </p>
           <p>To access the value of the second egg in the <code>eggspressions</code> array, use index 1 since it's the second item in the list. </p>
-          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <p class="highlight-color">File: examples/025-arrays-and-indexes.html</p>
           <div data-markdown>
             ```javascript
             var eggspressions = [];
@@ -1838,7 +1851,7 @@ var eggspressions = [];</code></pre>
             document.write("The 2nd egg is " + eggspressions[1] + " even though it has an index of 1.");
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/025-arrays-and-indexes.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1846,7 +1859,7 @@ var eggspressions = [];</code></pre>
           <p>Since <span class="highlight-text">Arrays</span> are also objects, there are many properties associated with the Array object. </p>
           <p>The <code>length</code> property is also associated with array objects.</p>
           <p>As mentioned previously, the <code>length</code> property returns the number of characters when associated with a <span class="highlight-text">string</span>. When used with an <span class="highlight-text">Array</span>, the <code>length</code> property returns the number of elements. </p>
-          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <p class="highlight-color">File: examples/026-arrays-and-properties.html</p>
           <div data-markdown>
             ```javascript
             // string variable
@@ -1863,7 +1876,7 @@ var eggspressions = [];</code></pre>
             //document.write(eggspressions.length);
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/026-arrays-and-properties.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1879,7 +1892,6 @@ var eggspressions = [];</code></pre>
           <p>How do we access a particular value?</p>
           <p>By using the index number.</p>
           <p>So how do we access the <span class="highlight-text">last</span> value?</p>
-          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
           <div data-markdown>
             ```javascript
             var eggspressions = [];
@@ -1889,7 +1901,6 @@ var eggspressions = [];</code></pre>
             eggspressions[3] = "giggling";
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
           <p>To access the last index value, you can use <code>eggspressions[3].</code> </p>
           <p>BUT...</p>
           <p>You can also use <code>eggspressions[eggspressions.length-1].</code></p>
@@ -1922,7 +1933,8 @@ var eggspressions = [];</code></pre>
 
         <section class="slide">
           <h2>How is this useful?</h2>
-          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <p> Since the index always begins at 0, the last index value is always <code>length-1</code>. This is useful if you want to always access the last index, despite new additions, and apply some code to it. </p>
+          <p class="highlight-color">File: examples/027-how-is-this-useful.html</p>
           <div data-markdown>
             ```javascript
             var eggspressions = [];
@@ -1935,7 +1947,7 @@ var eggspressions = [];</code></pre>
             document.write(eggspressions[eggspressions.length-1] + " is the last element in the array.");
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/027-how-is-this-useful.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
 
         </section>
 
@@ -2050,6 +2062,7 @@ var eggspressions = [];</code></pre>
        <section class="slide">
           <h2>For Loops, Arrays, Robots and Sales</h2>
           <p>Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
+          <p class="highlight-color">File: examples/028-for-loops-arrays-robots-sales.html</p>
           <div data-markdown>
             ```javascript
             var productPrices = [];
@@ -2070,6 +2083,7 @@ var eggspressions = [];</code></pre>
             }
             ```
           </div>
+          <a href="examples/028-for-loops-arrays-robots-sales.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
        <section class="slide">
@@ -2123,7 +2137,7 @@ var eggspressions = [];</code></pre>
             document.write("Hello!");
             ```
           </div>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/029-document-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -2131,6 +2145,7 @@ var eggspressions = [];</code></pre>
           <p>The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
           <small>(It's important that your HTML tag has an id attribute in order to do this!)</small>
           <p>For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
+          <p class="highlight-color">File: examples/030-html-element-objects.html</p>
           <pre><code>&lt;p id="text" style="border: 1px solid red;">
   Loading...
 &lt;/p>
@@ -2138,12 +2153,13 @@ var eggspressions = [];</code></pre>
 &lt;script>
 
 &lt;/script></code></pre>
-          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/030-html-element-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>HTML Element Objects (cont'd)</h2>
           <p>You can also use innerHTML to replace what's already in a element.</p>
+          <p class="highlight-color">File: examples/031-html-element-objects.html</p>
           <pre><code>&lt;p id="text" style="border: 1px solid red;">
   Loading...
 &lt;/p>
@@ -2152,22 +2168,26 @@ var eggspressions = [];</code></pre>
   var existingElement = document.getElementById("text");
 
 &lt;/script></code></pre>
+          <a href="examples/031-html-element-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>HTML Element Objects (cont'd)</h2>
           <p>Or let's dynamically swap out one image for another by updating the src attribute of an image tag.</p>
+          <p class="highlight-color">File: examples/032-html-element-objects.html</p>
           <pre><code>&lt;img id="cupcake" src="assets/exercises/assets/cupcake.jpg" />
 
 &lt;script>
 
 &lt;/script></code></pre>
+          <a href="examples/032-html-element-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Updating CSS Styles</h2>
           <p>You can even update an HTML element's CSS styles dynamically using its style property.</p>
           <p>Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
+          <p class="highlight-color">File: examples/033-updating-css-styles.html</p>
           <pre><code>&lt;style>
   #clickme {
     text-align: center;
@@ -2194,6 +2214,7 @@ Click me!
     }
   }
 &lt;/script></code></pre>
+          <a href="examples/033-updating-css-styles.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -2277,7 +2298,101 @@ Click me!
 
         <section class="slide">
           <h2>script tag gotchas</h2>
-          <p>Even though you're not writing JavaScript between the script tags, you must use a closing </script> tag. A self-closing tag such as <script src="scripts.js" /> will not work. The correct way is highlighted below:</p>
+          <p>Even though you're not writing JavaScript between the script tags, you must use a closing <code>&lt;/script></code> tag. A self-closing tag such as <code>&lt;script src="scripts.js" /></code> will not work. The correct way is highlighted below:</p>
+          <pre><code>&lt;script type="text/javascript" src="scripts.js">&lt;/script></code> </pre>
+        </section>
+
+        <section class="slide title">
+          <h1>JQuery</h1>
+          <h2>The Write Less, Do More, JavaScript Library</h2>
+        </section>
+
+        <section class="slide">
+          <h2>jQuery: A brief introduction</h2>
+          <p>jQuery is a cross-browser JavaScript library designed to simplify client-side scripting, manipulating HTML pages and handling events. The library contains many built-in functions and methods that make writing JavaScript code easier.</p>
+          <h3>Getting started</h3>
+          <p>Download the library and include the file in your HTML page</p>
+          <p>Download instructions can be found here: <a href="http://docs.jquery.com/Downloading_jQuery">http://docs.jquery.com/Downloading_jQuery</a></p>
+          <h3>Gotchas!</h3>
+          <p>When adding your own custom-written jQuery/JavaScript files, make sure to include it <b>after</b> the jQuery file to ensure that the library loads first.</p>
+        </section>
+
+        <section class="slide">
+          <h2>jQuery: Demo</h2>
+          <p>There are many built in methods and functions included in the jQuery library, too many to remember them all. Never fear, jQuery has documented their API here: <a href="http://api.jquery.com">http://api.jquery.com</a></p>
+          <p>It's searchable and provides explanations and examples.</p>
+          <p>Let take a peek at some jQuery code.</p>
+          <p class="highlight-color">File: exercises/1-mini-exercise-problem.html</p>
+          <div data-markdown>
+            ```javascript
+            $(document).ready(function(){
+              $('a.hide').click(function(){
+                 $('#box').hide();
+              });
+              $('a.show').click(function(){
+                 $('#box').show();
+              });
+              $('a.fade').click(function(){
+                 $('#box').fadeOut();
+              });
+              $('a.slide-up').click(function(){
+                 $('#box').slideUp();
+              });
+              $('a.slide-toggle').click(function(){
+                 $('#box').slideToggle();
+              });
+            });
+            ```
+          </div>
+          <div data-markdown>
+          ```
+          &lt;style>
+          #container {
+            width: 320px;
+            padding-top: 10px;
+          }
+          #box {
+            height: 60px;
+            width: 200px;
+            background-color: blue;
+            padding: 40px;
+            margin-top: 10px;
+          }
+          a {
+            font: 14px Georgia, serif;
+            text-decoration: none
+          }
+          a.active {
+            color: pink;
+          }
+          &lt;/style>
+          &lt;div id="container">
+            &lt;a class="hide" href="#">Hide&lt;/a> |
+            &lt;a class="show" href="#">Show&lt;/a> |
+            &lt;a class="fade" href="#">Fade&lt;/a> |
+            &lt;a class="slide-toggle" href="#">Slide Toggle&lt;/a>
+            &lt;div id="box">&lt;/div>
+          &lt;/div>
+           ```
+          </div>
+          <a href="examples/"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>BUT WAIT. Javascript isn't just for the browser anymore?</h2>
+          <p>Javascript has grown beyond the browser! You can use this language for front-end (browser) AND back-end (server) programming now.</p>
+          <p><a href="http://www.nodejs.org/">Node.js</a> is a Javascript 'platform' (a bunch of tools and code to help you make complex programs) for building javascript without the browser. It is commonly used to build web servers, but it has other uses too... like <a href="http://nodecopter.com/">ROBOTS</a>!!</p>
+          <p>Here is a tutorial for getting started with Node.js at home: <a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/</a></p>
+        </section>
+
+        <section class="slide title">
+          <h1>Introduction to JavaScript</h1>
+          <h2>FIN</h2>
+          <h2>Your instructor today</h2>
+        </section>
+
+        <section class="slide">
+          <h2>External JavaScript</h2>
         </section>
 
         <section class="slide">
