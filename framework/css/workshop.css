@@ -32,3 +32,13 @@
 .comparison-table tr:nth-child(even) {
   background-color: #343d46;
 }
+
+.run-button {
+  background-color: #222;
+  padding: 10px 30px;
+  color: #dfe1e8;
+  border: 0px;
+  font-size: 0.8em;
+  text-decoration: none;
+  float: right;
+}
