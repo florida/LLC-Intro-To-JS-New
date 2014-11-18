@@ -2,34 +2,30 @@
   <head>
     <title>JavaScript example!</title>
     <style>
-  #clickme {
-    text-align: center;
-    width: 100px;
-    padding: 5px 10px;
-    border: 1px solid #999;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-  }
-</style>
+      #clickme {
+        text-align: center;
+        width: 100px;
+        padding: 5px 10px;
+        border: 1px solid #999;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+      }
+    </style>
+    <script>
+      var button = document.getElementById("clickme");
+      function restyle() {
+        if ( button ) {
 
-<div id="clickme" onclick="restyle();">
-Click me!
-</div>
+        } else {
 
-<script>
-  var button = document.getElementById("clickme");
-  function restyle() {
-    if ( button ) {
-
-    } else {
-
-    }
-  }
-</script>
-       
-
+        }
+      }
+    </script>
   </head>
   <body>
+    <div id="clickme" onclick="restyle();">
+      Click me!
+    </div>
   </body>
 </html>
