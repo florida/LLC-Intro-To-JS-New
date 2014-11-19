@@ -34,7 +34,7 @@
         </h1>
         <h2><span>with</span> Florida Elago</h2>
 
-        <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+        <img class="instructor-img" src="framework/img/florida-elago.jpg" alt="instructor name">
         <ul>
           <li><i class="fa fa-envelope"></i><a href="mailto:">florida.elago@gmail.com</a></li>
           <li><i class="fa fa-desktop"></i><a href="#">floridaelago.com</a></li>
@@ -43,7 +43,13 @@
       </div>
     </header>
 
-      <main>
+    <main>
+      <section class="slide centered">
+        <h2>Introduction to JavaScript</h2>
+        <p><a href="https://github.com/florida/LLC-Intro-To-JS-New">https://github.com/florida/LLC-Intro-To-JS-New</a></p>
+        <p><img src="framework/img/downloadslides.gif" alt="download slides animation" /></p>
+      </section>
+
         <section class="slide">
           <h2>Course Outline</h2>
           <h3 class="delayed"> The morning (lunch @ ~12:00pm)</h3>
@@ -85,21 +91,24 @@
           <p>There are many, many free and paid options but let's keep it simple for our mentors today and just one of these two to edit our code.</p>
 
           <p>
-            <a href="http://www.sublimetext.com/"><img width="200"  src="framework/img/brackets-logo.png" alt="Sublime Text"/></a>
-            <a href="http://www.sublimetext.com/"><img width="200" src="framework/img/atom-logo.png" alt="Sublime Text"/></a>
+            <a href="http://brackets.io/"><img width="200"  src="framework/img/brackets-logo.png" alt="Brackets"/></a>
+            <a href="https://atom.io/"><img width="200" src="framework/img/atom-logo.png" alt="Atom"/></a>
           </p>
         </section>
 
-        <section class="slide centered">
-          <h1>Using a Code Editor</h1>
+        <section class="slide">
+          <h2>Using the Code Editor</h2>
 
-          <p>TODO: Instructions</p>
+          <ul>
+            <li>Open the code editor</li>
+            <li>Find the zip folder that we downloaded</li>
+            <li>Unzip the zip folder</li>
+            <li>Drag the folder to the code editor</li>
+          </ul>
 
-          <p>
-            <a href="http://www.sublimetext.com/"><img width="200"  src="framework/img/brackets-logo.png" alt="Sublime Text"/></a>
-            <a href="http://www.sublimetext.com/"><img width="200" src="framework/img/atom-logo.png" alt="Sublime Text"/></a>
-          </p>
-        </section>
+          <p>Your sidebar should now have to following items</p>
+          <p><img src="framework/img/codeeditorsidebar.png" alt="sidebar preview" /></p>
+       </section>
 
         <section class="slide title">
           <h1>Technology Overview</h1>
@@ -833,7 +842,6 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
         </section>
 
         <section class="slide">
-          <!-- TODO: maybe show a conditional first before showing this -->
           <h2>Important! Assignment is not the same as equality</h2>
           <img src="framework/img/rawbot-important.png" alt="robot important" align="left"/>
           <p>Drill this into your head. Tattoo it to your arm! So many errors happen because of this key difference:</p>
@@ -1070,12 +1078,12 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
               <td width="35%">(ten < 11 &amp;&amp; ten > 9)</td>
             </tr>
              <tr>
-              <td width="15%">===</td>
+              <td width="15%">||</td>
               <td width="50%">or</td>
               <td width="35%">(ten == 10 || two == 2)</td>
             </tr>
              <tr>
-              <td width="15%">!=</td>
+              <td width="15%">!</td>
               <td width="50%">not</td>
               <td width="35%"> !(ten == two)</td>
             </tr>
@@ -1083,8 +1091,35 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
         </section>
 
         <section class="slide">
-          <h2>Explain Logical Operators</h2>
-          <!--TODO: explain logical operators-->
+          <h2>The &amp;&amp;(and) operator</h2>
+          <p class="delayed">The && operator returns <code>true</code> only if all the conditions are true</p>
+          <pre class="delayed"><code>true && true // returns true
+true && false // returns false
+false && false // returns false</code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>The ||(or) operator</h2>
+          <p class="delayed">The || operator returns <code>true</code> only if at least one of the conditions are true</p>
+          <pre class="delayed"><code>true || true // returns true
+true || false // returns true
+false || false // returns false</code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>The !(not) operator</h2>
+          <p class="delayed">The ! operator returns <code>true</code> only if the condition returns <code>false</code></p>
+          <pre class="delayed"><code>!true // returns false
+!false // returns true</code></pre>
+        </section>
+
+        <section class="slide">
+          <h2>Mixing it all together</h2>
+          <p class="delayed">let's set the variables <code>two = 2</code> and <code>ten = 10</code></p>
+          <pre class="delayed"><code>(two &lt;= 5 && ten != 9 || 10 == ten)</code></pre>
+          <p class="delayed">returns <code>true</code></p>
+          <pre class="delayed"><code>(20 != (ten*two) && 3 &gt;= two)</code></pre>
+          <p class="delayed">returns <code>false</code></p>
         </section>
 
         <section class="slide">
@@ -1311,14 +1346,38 @@ What are some questions or issues you are having with the material covered so fa
         <section class="slide">
           <h2>Functions &amp; Methods</h2>
           <p>What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
-          <p><span class="highlight-text">Paying for parking:</span></p>
-          <p>TODO: Better function example</p>
+          <p><span class="highlight-text"></span></p>
+          <p><strong>Making a Cake</strong></p>
+          <table cellspacing="0" width="100%" >
+            <thead>
+              <td>The Old Way</td>
+              <td>The Improved Way</td>
+            </thead>
+            <tr>
+              <td>
+                <ol>
+                  <li>Get a bowl</li>
+                  <li>Add some eggs</li>
+                  <li>Add some flour</li>
+                  <li>Stir</li>
+                  <li>Knead</li>
+                  <li>Bake</li>
+                </ol>
+              </td>
+              <td valign="top">
+                <ol>
+                  <li>Make a cake</li>
+                  <li>Nom nom nom</li>
+                </ol>
+              </td>
+            </tr>
+          </table>
         </section>
 
         <section class="slide">
           <h2>Functions in JavaScript</h2>
           <p><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
-          <p data-markdown>`prompt()` and `alert` are two functions that are pre-written into JavaScript.</p>
+          <p data-markdown>`prompt()` and `alert()` are two functions that are pre-written into JavaScript.</p>
           <p>Someone already did the hard work for us by writing these functions to show us popups in the browser. </p>
           <p>But we can also write our own!</p>
         </section>
@@ -1802,7 +1861,7 @@ Let's order another pizza. </p>
           <h2>Arrays</h2>
           <p><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
           <p>Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
-          <!--TODO: Image or eggs -->
+          <img src="framework/img/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
           <p>Just like variables and objects, declare an array with the keyword var.</p>
           <pre><code>var eggspressions = [];</code></pre>
           <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
@@ -1875,11 +1934,10 @@ var eggspressions = [];</code></pre>
         </section>
 
         <section class="slide">
-          <h2>Arrays &amp; Length:  Why?</h2>
+          <h2>Arrays &amp; Length: Why?</h2>
           <p>It is common to use JavaScript to run through a list of values and apply some code to it. In order to do this, we need to know how many elements there are in total. </p>
-          <!--TODO: find better photogallery-->
-          <p>Let's look at this photo gallery from theglobeandmail.com and figure out how length can be used here. </p>
-          <!--TODO: image here-->
+          <p>Let's look at this photo gallery from <a href="http://abcnews.go.com/US/photos/snow-blast-polar-cold-21609711/image-22767131">abcnews.go.com</a> and figure out how length can be used here. </p>
+          <p><img src="framework/img/exampleslideshow.png" alt="slideshow example" height="300"/></p>
         </section>
 
         <section class="slide">
