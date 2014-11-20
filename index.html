@@ -100,14 +100,14 @@
           <h2>Using the Code Editor</h2>
 
           <ul>
-            <li>Open the code editor</li>
-            <li>Find the zip folder that we downloaded</li>
-            <li>Unzip the zip folder</li>
-            <li>Drag the folder to the code editor</li>
+            <li class="delayed">Open the code editor</li>
+            <li class="delayed">Find the zip folder that we downloaded</li>
+            <li class="delayed">Unzip the zip folder</li>
+            <li class="delayed">Drag the folder to the code editor</li>
           </ul>
 
-          <p>Your sidebar should now have to following items</p>
-          <p><img src="framework/img/codeeditorsidebar.png" alt="sidebar preview" /></p>
+          <p class="delayed">Your sidebar should now have to following items</p>
+          <p class="delayed"><img src="framework/img/codeeditorsidebar.png" alt="sidebar preview" /></p>
        </section>
 
         <section class="slide title">
@@ -128,14 +128,11 @@
           <img src="framework/img/rawbot-computers.png" alt="rawbot computers" style="height:50vh" />
         </section>
 
-        <section class="slide" data-markdown>
-          ##Programming is giving instructions to your computer
-
-          Think about a tourist that stops you to ask for directions:
-
-          The clearer the instructions, the more likely they will get to their destination.
-
-          ![rawbot computers](framework/img/rawbot-directions.png)
+        <section class="slide">
+          <h2>Programming is giving instructions to your computer</h2>
+          <p>Think about a tourist that stops you to ask for directions:</p>
+          <p>The clearer the instructions, the more likely they will get to their destination.</p>
+          <p><img src="framework/img/rawbot-directions.png" alt="rawbot directions" style="height:50vh"/></p>
         </section>
 
         <section class="slide">
@@ -161,11 +158,11 @@
         <section class="slide">
           <h2>Speak the computer's language</h2>
 
-          <p>Programming is like having a conversation with your computer. You write to it using a programming language and give it instructions this way.</p>
+          <p class="delayed">Programming is like having a conversation with your computer. You write to it using a programming language and give it instructions this way.</p>
 
-          <p>Computers only understand instructions when you speak to them in a language they can understand. Much like Japanese, English or any other natural language, programming is about sticking to grammar rules called <span class="highlight-text">syntax.</span></p>
+          <p class="delayed">Computers only understand instructions when you speak to them in a language they can understand. Much like Japanese, English or any other natural language, programming is about sticking to grammar rules called <span class="highlight-text">syntax.</span></p>
 
-          <small>Syntax - is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</small>
+          <small class="delayed">Syntax - is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.</small>
         </section>
 
         <section class="slide">
@@ -237,14 +234,14 @@ document.write("Hello, " + name);</code></pre>
           <h2>Web Programming Languages: Server-side vs Client-side</h2>
 
           <img class="delayed" src="framework/img/backend-frond-end-gif.gif" alt="front end back end diagram" height="450" />
-          <p class="delayed"><span class="highlight-text">Java, .NET, PHP or Ruby</span> can be considered <span class="highlight-text">server-side or "back-end"</span> web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. </p>
-        </section>
+          <p class="delayed"><span class="highlight-text">javascript</span> is often referred to as a <span class="highlight-text">client-side or "front-end"</span> web technology because it is interpreted by the web browser.</p>
+       </section>
 
         <section class="slide centered">
           <h2>web programming languages: server-side vs client-side</h2>
 
-          <p class="delayed"><span class="highlight-text">javascript</span> is often referred to as a <span class="highlight-text">client-side or "front-end"</span> web technology because it is interpreted by the web browser. it can be used for server-side programs too, but today we'll be focusing on the browser. </p>
           <img class="delayed" src="framework/img/backend-frond-end-server-gif.gif" alt="computer diagram" height="450" />
+          <p class="delayed"><span class="highlight-text">Java, .NET, PHP or Ruby</span> can be considered <span class="highlight-text">server-side or "back-end"</span> web technology because the code is typically compiled and executed by the operating system of a computer serving up web pages. JavaScript can be used for server-side programs too, but today we'll be focusing on the browser.  </p>
         </section>
 
         <section class="slide">
@@ -289,11 +286,11 @@ document.write("Hello, " + name);</code></pre>
 
         <section class="slide">
           <h2>JavaScript in Different Browsers</h2>
-          <p><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Usually JavaScript will run the same way in various browsers.</p>
+          <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="80"/>Usually JavaScript will run the same way in various browsers.</p>
           <p class="delayed">But, browsers are software programs written by many different people/companies (people programming things just like you!), so sometimes they say "hi" with different accents.</p>
           <p class="delayed">Imagine a British accent versus a Texas accent.</p>
           <p class="delayed">This is especially noticeable with newer "HTML5" features.</p>
-          <img src="framework/img/browser-war-illustration.jpg" alt="browser war" height="300"/>
+          <img class="delayed" src="framework/img/browser-war-illustration.jpg" alt="browser war" height="300"/>
         </section>
 
         <section class="slide">
@@ -355,7 +352,10 @@ document.write("Hello, " + name);</code></pre>
 
           <h3 class="delayed">text output</h3>
           <pre class="delayed"><code>document.write("document.write outputs text into the page.");</code></pre>
+        </section>
 
+        <section class="slide title">
+          <h1>Variables</h1>
         </section>
 
         <section class="slide">
@@ -363,6 +363,7 @@ document.write("Hello, " + name);</code></pre>
           <p class="delayed"><span class="highlight-text">Variables</span> are used to store values.</p>
           <p class="delayed"><span class="highlight-text">Declaring</span> a variable tells the computer that it exists and to remember it.</p>
           <p class="delayed">Variables are like boxes; it can be used to store different things.</p>
+          <img src="framework/img/boxes.jpg" alt="boxes" />
         </section>
 
        <section class="slide">
@@ -374,7 +375,8 @@ document.write("Hello, " + name);</code></pre>
           <div class="delayed">
             <pre><code>prompt("What's your name?");
 document.write("Hello....?");</code></pre>
-            <a href="examples/001-what-is-your-name.html" class="run-button">Run</a>
+
+            <a href="examples/001-what-is-your-name.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
           </div>
         </section>
 
@@ -448,10 +450,10 @@ and usually only in special circumstances. </p>
 
         <section class="slide">
           <h2>Variables: Tips &amp; Best Practices</h2>
-          <p>Variables can't contain spaces. Use a convention called camel case. Every new word is capitalized and the result looks <span class="hightlight-text">likeCamelHumps</span>.</p>
-          <p>JavaScript is case sensitive so variable names are also case sensitive.</p>
-          <p>Another convention is to use underscores <span class="highlight-text">to_separate_words</span>. This is common in other programming languages (like PHP).</p>
-          <div data-markdown>
+          <p class="delayed">Variables can't contain spaces. Use a convention called camel case. Every new word is capitalized and the result looks <span class="hightlight-text">likeCamelHumps</span>.</p>
+          <p class="delayed">JavaScript is case sensitive so variable names are also case sensitive.</p>
+          <p class="delayed">Another convention is to use underscores <span class="highlight-text">to_separate_words</span>. This is common in other programming languages (like PHP).</p>
+          <div class="delayed" data-markdown>
           ```javascript
           var greetMe = prompt("Hello, what's your name?");
           var greetme = prompt("Bonjour, quel est ton nom?");
@@ -463,15 +465,15 @@ and usually only in special circumstances. </p>
           document.write(greet_me);
           ```
           </div>
-          <a href="examples/002.1-tips-best-practices.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/002.1-tips-best-practices.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Variables: Tips &amp; Best Practices</h2>
-          <p>When naming a variable, it's best to give it a descriptive name.</p>
-          <p>It makes it easier to see at a glance, what kind of value that variable is going to hold.</p>
-          <p>This is especially useful when sharing code with others who may not use the same kinds of abbreviations.</p>
-          <div data-markdown>
+          <p class="delayed">When naming a variable, it's best to give it a descriptive name.</p>
+          <p class="delayed">It makes it easier to see at a glance, what kind of value that variable is going to hold.</p>
+          <p class="delayed">This is especially useful when sharing code with others who may not use the same kinds of abbreviations.</p>
+          <div data-markdown class="delayed">
             ```javascript
             var firstName; // Clear that first name will go here.
             var fn;        // Not as obvious as firstName.
@@ -481,9 +483,9 @@ and usually only in special circumstances. </p>
 
         <section class="slide">
           <h2>Whitespace in JavaScript</h2>
-          <p>Whitespace refers to blank characters and includes space characters, tabs and line breaks.</p>
-          <p>JavaScript ignores whitespace except when used in a string.</p>
-          <div data-markdown>
+          <p class="delayed">Whitespace refers to blank characters and includes space characters, tabs and line breaks.</p>
+          <p class="delayed">JavaScript ignores whitespace except when used in a string.</p>
+          <div data-markdown class="delayed">
             ```javascript
             var name="Ladies Learning Code";
             //same as
@@ -492,19 +494,19 @@ and usually only in special circumstances. </p>
             var name = "Ladies     Learning       Code";
             ```
           </div>
-          <div data-markdown>
+          <div data-markdown class="delayed">
             ```javascript
             alert("Whitespace     in    a    string.");
             document.write("Whitespace     in    a    string.");
             ```
           </div>
-          <a href="examples/003-whitespace-in-javascript.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/003-whitespace-in-javascript.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Comments</h2>
-          <p>Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!</p>
-          <div data-markdown>
+          <p class="delayed">Sometimes you want to write notes to yourself (and others!) to organize blocks of code or leave explanations, but you want the browser to ignore it. Use comments!</p>
+          <div data-markdown class="delayed">
             ```javascript
             // This is how you leave a single line comment.
 
@@ -513,21 +515,21 @@ and usually only in special circumstances. </p>
             // for every new line.
             ```
           </div>
-          <p>Here's another way to comment larger blocks of text.</p>
-          <div data-markdown>
+          <p class="delayed">Here's another way to comment larger blocks of text.</p>
+          <div data-markdown class="delayed">
             ```javascript
             /* This is how you leave
             multi-line comments for when you
             want to write a longer message */
             ```
           </div>
-          <p>Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!</p>
+          <p class="delayed">Multi-line comments are great for "hiding" large blocks of code so you can try something new without erasing your old code. Don't forget to remove the old code later if you decide that you don't need it though!</p>
         </section>
 
         <section class="slide">
           <h2>Mini-exercise #1 (5-10 minutes)</h2>
           <p>Here's a test shipping form. Right now, after you press Run, the shipping label is blank. How do we fix this? </p>
-          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot hint" align="left" height="80"/>(1) Use variables to store your name and address!<br />
+          <small><img src="framework/img/rawbot-hint.png" alt="robot hint" align="left" height="80"/>(1) Use variables to store your name and address!<br />
           (2) To verify that your variables are working, uncomment out the document.write() lines and replace ********** with the actual name of your variables.</small>
           <p class="highlight-color"><b>File:</b> exercises/1-mini-exercise-problem.html</p>
           <div data-markdown>
@@ -593,7 +595,7 @@ and usually only in special circumstances. </p>
         <section class="slide">
           <h2>Shopping Cart: Totals and Discounts</h2>
           <p>Let's try applying some arithmetic operations to our shopping cart.</p>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>addition (+), subtraction (-), multiplication (*), division (/)</small>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>addition (+), subtraction (-), multiplication (*), division (/)</small>
           <p class="highlight-color">File: examples/007-shopping-cart.html</p>
           <div data-markdown>
             ```javascript
@@ -678,7 +680,7 @@ and usually only in special circumstances. </p>
 
         <section class="slide">
           <h2>Mini-exercise #2: Go! (5-10 minutes)</h2>
-          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>How do we increase or decrease the value of the variable?</small>
+          <small><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>How do we increase or decrease the value of the variable?</small>
           <p class="highlight-color">File: exercises/2-mini-exercise-problem.html</p>
           <div data-markdown>
             ```javscript
@@ -766,6 +768,7 @@ and usually only in special circumstances. </p>
 
         <section class="slide">
           <h2>Concatenation in action (results)</h2>
+          <p>Let's re-visit mini-exercise #2 and add a total cost field</p>
           <div data-markdown>
             ```javasript
             var quantity = 0;
@@ -809,17 +812,21 @@ and usually only in special circumstances. </p>
           <a href="examples/012-concatenation-in-action.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
+        <section class="slide title">
+          <h1>Conditionals</h1>
+        </section>
+
         <section class="slide">
           <h2>Conditional Statements</h2>
-          <p>Let's pretend to be your wise but nagging grandmother right now:</p>
+          <p class="delayed">Let's pretend to be your wise but nagging grandmother right now:</p>
           <ul>
-            <li>I hear it's cold out: bring a sweater!</li>
-            <li>The weather network says it's going to rain: take your umbrella!</li>
-            <li>It's cold and snowing: wearing your warm boots!</li>
-            <li>If (condition) then (perform instruction)</li>
+            <li class="delayed">I hear it's cold out: bring a sweater!</li>
+            <li class="delayed">The weather network says it's going to rain: take your umbrella!</li>
+            <li class="delayed">It's cold and snowing: wearing your warm boots!</li>
+            <li class="delayed">If (condition) then (perform instruction)</li>
           </ul>
-          <p>All these things make logical sense to us as grown up humans but computers are a blank slate. The last one is a little closer to the simple instructions that a computer needs.</p>
-          <p>As a programmer, you tell the computer how to behave across certain states or events by using CONDITIONALS.</p>
+          <p class="delayed">All these things make logical sense to us as grown up humans but computers are a blank slate. The last one is a little closer to the simple instructions that a computer needs.</p>
+          <p class="delayed">As a programmer, you tell the computer how to behave across certain states or events by using CONDITIONALS.</p>
         </section>
 
         <section class="slide centered">
@@ -837,7 +844,7 @@ and usually only in special circumstances. </p>
             }
             ```
           </div>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>The round <b>brackets ()</b> group together a condition to test.<br />
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>The round <b>brackets ()</b> group together a condition to test.<br />
 The curly <b>braces {}</b> group together a set of statements to execute.</small>
         </section>
 
@@ -1025,7 +1032,7 @@ The curly <b>braces {}</b> group together a set of statements to execute.</small
 
         <section class="slide">
           <h2>Cheat Sheet: Comparison and Logical Operators </h2>
-          <p class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Here's a <span class="highlight-text">cheat sheet</span> of different operators that can be used in conditional statements. </p>
+          <p><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Here's a <span class="highlight-text">cheat sheet</span> of different operators that can be used in conditional statements. </p>
 
           <p data-markdown>Using these two variables, `var two = 2` and `var ten = 10`, the examples below show how the statements would return true using the various operators. </p>
           <table cellspacing="0" class="comparison-table" style="margin-right:20px;width:50%;">
@@ -1175,7 +1182,7 @@ false || false // returns false</code></pre>
           <h2>Mini-exercise #3 (10 minutes)</h2>
           <p> Uh-oh! Someone can attempt to put a negative number of products in their shopping cart! Complete task #1 in the next slide to fix this. For task #2, warn the user that they are attempting to check out with an empty basket. Make a more robust shopping cart so that your customer's order doesn't go sideways. </p>
           <p>This is based on Exercise #3 so it should look very familiar! </p>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>(Hint: How do you test if a number is greater than, less then, or equal to another number?)</small>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>(Hint: How do you test if a number is greater than, less then, or equal to another number?)</small>
         </section>
 
         <section class="slide">
@@ -1230,12 +1237,12 @@ false || false // returns false</code></pre>
           <h2>Mini-exercise #4 (5-10 minutes)</h2>
           <p>Let's revisit the shipping form again -- it's a very simple shipping form, but you don't want someone to be able to submit their order if they haven't filled out their address! </p>
           <p>You have been supplied with 1 variable ("address") which will automagically match what is typed into the form field (minus extra whitespace) after you press the "Check out now!" button.</p>
-          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot hint" align="left" height="50"/>(Hint: If you don't type anything into the address field, you get an "empty string". How do you test for an empty string?) </small>
+          <small><img src="framework/img/rawbot-hint.png" alt="robot hint" align="left" height="50"/>(Hint: If you don't type anything into the address field, you get an "empty string". How do you test for an empty string?) </small>
         </section>
 
         <section class="slide">
           <h2>Mini-exercise #4 (5-10 minutes)</h2>
-          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>TODO: Check within the code for your ONE task.</small>
+          <small><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/>TODO: Check within the code for your ONE task.</small>
 
           <p class="highlight-color">File: exercises/4-mini-exercise-problem.html</p>
           <div data-markdown>
@@ -1266,14 +1273,14 @@ false || false // returns false</code></pre>
           <h2>Mini-exercise #5 (15-20 minutes)</h2>
           <p>Now here's a more complex shopping form that you require all fields to be filled in. You have been supplied with 3 additional variables which will automagically update: "name", "city", and "postal".</p>
 
-          <small class="delayed"><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/> (Hint for task #3: How do you test for something AND somethingElse OR anotherThing at one time?) </small>
+          <small><img src="framework/img/rawbot-hint.png" alt="robot reminder" align="left" height="50"/> (Hint for task #3: How do you test for something AND somethingElse OR anotherThing at one time?) </small>
 
           <p>Bonus: There's always different ways to get to the same end goal. If you're finished early, try out different ways that you can reduce the number of variables and lines of code.</p>
         </section>
 
         <section class="slide">
           <h2>Mini-exercise #5 (15-20 minutes)</h2>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>Statements are comma</small>
 
           <p class="highlight-color">File: exercises/5-mini-exercise-problem.html</p>
           <div data-markdown>
@@ -1343,12 +1350,15 @@ What are some questions or issues you are having with the material covered so fa
           <h2>Part 2</h2>
         </section>
 
+        <section class="slide title">
+          <h1>Functions</h1>
+        </section>
+
         <section class="slide">
-          <h2>Functions &amp; Methods</h2>
-          <p>What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
-          <p><span class="highlight-text"></span></p>
-          <p><strong>Making a Cake</strong></p>
-          <table cellspacing="0" width="100%" >
+          <h2 class="delayed">Functions &amp; Methods</h2>
+          <p class="delayed">What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
+          <p class="delayed"><strong>Making a Cake</strong></p>
+          <table class="delayed" cellspacing="0" width="100%" >
             <thead>
               <td>The Old Way</td>
               <td>The Improved Way</td>
@@ -1376,37 +1386,36 @@ What are some questions or issues you are having with the material covered so fa
 
         <section class="slide">
           <h2>Functions in JavaScript</h2>
-          <p><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
-          <p data-markdown>`prompt()` and `alert()` are two functions that are pre-written into JavaScript.</p>
-          <p>Someone already did the hard work for us by writing these functions to show us popups in the browser. </p>
-          <p>But we can also write our own!</p>
+          <p class="delayed"><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
+          <p data-markdown class="delayed">`prompt()` and `alert()` are two functions that are pre-written into JavaScript.</p>
+          <p class="delayed">Someone already did the hard work for us by writing these functions to show us popups in the browser. </p>
+          <p class="delayed">But we can also write our own!</p>
         </section>
 
         <section class="slide centered">
           <h2>Function Syntax</h2>
-          <img src="framework/img/syntax-function.gif" alt="robot reminder" />
+          <img src="framework/img/syntax-function.gif" alt="robot reminder" class="delayed" />
         </section>
 
         <section class="slide">
           <h2>Defining a Function</h2>
-          <p>Create your own functions to group together your own repetitive tasks.</p>
-          <p>To create a function, it needs to be <span class="highlight-text">defined</span> first.</p>
-          <p data-markdown>There are different ways to define a `function`, but the most common way is using the function keyword and enclosing one or more lines of code within curly braces `{ }`.</p>
-          <div data-markdown>
+          <p class="delayed">Create your own functions to group together your own repetitive tasks.</p>
+          <p class="delayed">To create a function, it needs to be <span class="highlight-text">defined</span> first.</p>
+          <p class="delayed" data-markdown>There are different ways to define a `function`, but the most common way is using the function keyword and enclosing one or more lines of code within curly braces `{ }`.</p>
+          <div data-markdown class="delayed">
             ```javascript
             function nameOfFunction() {
               var name = "Name";
             }
             ```
           </div>
-
         </section>
 
         <section class="slide">
           <h2>Calling a Function</h2>
           <p>The code within functions doesn't execute until it's <span class="highlight-text">called</span>!</p>
           <p>Let's try that again.</p>
-          <div data-markdown>
+          <div data-markdown class="delayed">
             ```javascript
             //defining the function
             function sayMyName() {
@@ -1417,16 +1426,16 @@ What are some questions or issues you are having with the material covered so fa
             sayMyName();
             ```
           </div>
-          <a href="examples/016-calling-a-function.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/016-calling-a-function.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Functions &amp; Events</h2>
-          <p>The browser executes the JavaScript as soon as the page loads. </p>
-          <p>But sometimes you need to control when it executes. For example, if someone rolls over a navigation menu or presses a Submit button. </p>
-          <p>This is where functions also come into play.</p>
+          <p class="delayed">The browser executes the JavaScript as soon as the page loads. </p>
+          <p class="delayed">But sometimes you need to control when it executes. For example, if someone rolls over a navigation menu or presses a Submit button. </p>
+          <p class="delayed">This is where functions also come into play.</p>
 
-          <div data-markdown>
+          <div data-markdown class="delayed">
             ```javascript
             //define function
             function sayMyName() {
@@ -1435,7 +1444,7 @@ What are some questions or issues you are having with the material covered so fa
             ```
           </div>
 
-          <div data-markdown>
+          <div data-markdown class="delayed">
             ```xml
             &lt;!-- call function from a button click -->
             &lt;input type="button" onclick="sayMyName()" value="Say my name!">
@@ -1448,7 +1457,7 @@ What are some questions or issues you are having with the material covered so fa
             ```
           </div>
 
-          <a href="examples/017-functions-and-events.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/017-functions-and-events.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1502,10 +1511,10 @@ What are some questions or issues you are having with the material covered so fa
         <section class="slide">
           <h2>Review: What do we know about Functions so far?</h2>
           <ul>
-            <li>Created &amp; defined by using the <code>function</code> keyword</li>
-            <li>Used to group together related lines of code and store them under descriptive names</li>
-            <li>Can be reused just by calling the function name</li>
-            <li><span class="highlight-text">Define</span> the function first but it will not run until you <span class="highlight">call</span> the function</li>
+            <li class="delayed">Created &amp; defined by using the <code>function</code> keyword</li>
+            <li class="delayed">Used to group together related lines of code and store them under descriptive names</li>
+            <li class="delayed">Can be reused just by calling the function name</li>
+            <li class="delayed"><span class="highlight-text">Define</span> the function first but it will not run until you <span class="highlight">call</span> the function</li>
           </ul>
         </section>
 
@@ -1864,7 +1873,7 @@ Let's order another pizza. </p>
           <img src="framework/img/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
           <p>Just like variables and objects, declare an array with the keyword var.</p>
           <pre><code>var eggspressions = [];</code></pre>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
         </section>
 
         <section class="slide">
@@ -1881,7 +1890,7 @@ var eggspressions = [];</code></pre>
             ```
           </div>
         <p>The numbers inside the square brackets <code>[ ]</code> are referred to as the <span class="highlight-text">index</span> number. Array indexes <span class="highlight-text">always</span> start at <span class="highlight-text">zero</span>. </p>
-        <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Arrays can be declared in different ways.<br />
+        <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Arrays can be declared in different ways.<br />
           The above example can also be declared like this:<br />
           <code>var eggspressions = ["skeptical","frazzled","silly", "giggling"];</code>
         </small>
@@ -2037,7 +2046,7 @@ var eggspressions = [];</code></pre>
           ```
           </div>
 
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
         </section>
 
         <section class="slide">
@@ -2088,7 +2097,7 @@ var eggspressions = [];</code></pre>
             }
             ```
           </div>
-          <small class="delayed"><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>
+          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>
             Incrementer (i++) and decrementer (i--) operators add or subtract one.<br />
             i++ is the same as i = i + 1<br />
             i-- is the same as i = i - 1<br />
