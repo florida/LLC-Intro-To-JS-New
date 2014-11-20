@@ -1704,19 +1704,19 @@ Let's order another pizza. </p>
 
         <section class="slide">
           <h2>Creating an Object</h2>
-          <p>Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
-          <p>But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
-          <pre><code>var bentobox = {};</code></pre>
-          <small>Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
+          <p class="delayed">Creating an object is easy. Just like any other variable, use the <code>var</code> keyword and give it a descriptive name. </p>
+          <p class="delayed">But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
+          <pre class="delayed"><code>var bentobox = {};</code></pre>
+          <small class="delayed">Yes, it's weird but think about the <code>{}</code> as a sort of funky container.</small>
 
         </section>
 
       <section class="slide">
           <h2>Object Properties</h2>
-          <p>The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
-          <p>If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
+          <p class="delayed">The "compartments" of objects are called <span class="highlight-text">PROPERTIES</span>.</p>
+          <p class="delayed">If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are very commonly used, they will both be discussed.</p>
 
-          <table cellpadding="20">
+          <table cellpadding="20" class="delayed">
             <thead>
               <td>Dot notation:</td>
               <td>Key-Value Lookup:</td>
@@ -1751,33 +1751,34 @@ Let's order another pizza. </p>
 
         <section class="slide">
           <h2>Why use Objects?</h2>
-          <p><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
-          <p>There's an <b>expectation</b> of what you'll get in a bento box. </p>
-          <p>Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
-          <img src="framework/img/object-bento-box.png" width="45%" alt=""/>
-          <img src="framework/img/object-bento-box-2.png" width="45%" alt=""/>
+          <p class="delayed"><i>Advanced topic:</i> Objects are useful because you group all these properties together and you can <b>reuse</b> the object over again.</p>
+          <p class="delayed">There's an <b>expectation</b> of what you'll get in a bento box. </p>
+          <p class="delayed">Some items are <b>fixed</b> (seaweed salad and sushi) but some compartments can be <b>edited</b> (a miso soup side versus tempura). </p>
+          <img class="delayed" src="framework/img/object-bento-box.png" width="45%" alt=""/>
+          <img class="delayed" src="framework/img/object-bento-box-2.png" width="45%" alt=""/>
         </section>
 
         <section class="slide">
           <h2>Think of Everything as an Object*</h2>
-          <p>When I said that objects were "advanced variables", here's another way of looking at it:</p>
-          <p><b>All JavaScript variables can be treated like objects too.</b></p>
-          <p>If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
-          <img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
-          <div data-markdown>
+          <p class="delayed">When I said that objects were "advanced variables", here's another way of looking at it:</p>
+          <p class="delayed"><b>All JavaScript variables can be treated like objects too.</b></p>
+          <p class="delayed">If curly braces are a container for a generic object, quotes are containers for characters. When we get to arrays next, you'll see that it uses square brackets. (The only "uncontainered" object we've introduced today was a number.)</p>
+          <img class="delayed" src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left" height="50"/>
+          <div class="delayed" data-markdown>
             ```javascript
             var stringObject = “ ”;
             var arrayObject = [ ];
             ```
           </div>
-          <p>Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
+          <p class="delayed">Some objects are simpler than others but almost everything in JavaScript has properties available to us.</p>
         </section>
 
         <section class="slide">
           <h2>Built-in JavaScript Properties</h2>
-          <p>In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
-          <p>Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
-          <div data-markdown>
+          <p class="delayed">In this workshop we won't be creating any of our own objects, but JavaScript already has many objects built into the language.</p>
+          <p class="delayed">Let's look at a string object and the <code>length</code> property which returns the number of characters in a string. Try putting your own name in here.</p>
+          <p class="highlight-color delayed">File: examples/023-built-in-javascript-properties.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             var firstName = "Florida";
 
@@ -1786,13 +1787,13 @@ Let's order another pizza. </p>
             ```
           </div>
 
-          <a href="examples/023-built-in-javascript-properties.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/023-built-in-javascript-properties.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
-          <h2>Functions in Objects</h2>
-          <p>Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
-          <table cellspacing="0" width="100%">
+          <h2 class="delayed">Functions in Objects</h2>
+          <p class="delayed">Previously, we talked about functions as blocks of re-usable code. This might sound crazy but <b>you can store functions in variables</b> too!</p>
+          <table cellspacing="0" width="100%" class="delayed">
             <thead>
               <td colspan="2">This function...</td>
               <td>is the same as:</td>
@@ -1839,10 +1840,10 @@ Let's order another pizza. </p>
 
         <section class="slide">
           <h2>Object Methods</h2>
-          <p>When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
-          <p>Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
-          <p class="highlight-color">File: examples/024-object-methods.html</p>
-          <div data-markdown>
+          <p class="delayed">When a function is associated with an object we call it a <span class="highlight-text">METHOD</span>.</p>
+          <p class="delayed">Let's say you're having a robot sale! Everything is 50% off. But, after doing the math, you notice that the sale price is a bit off.. Let's declare a sale price and manipulate it using <code>toFixed()</code>. When you use a method, it gives you access to all the hard work that someone else did and it only takes you one line to use it!</p>
+          <p class="highlight-color delayed">File: examples/024-object-methods.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             var salePrice1 = 20.00 * 0.50;
             var salePrice2 = 35.00 * 0.50;
@@ -1856,7 +1857,7 @@ Let's order another pizza. </p>
             document.write( salePrice3 );
             ```
           </div>
-          <a href="examples/024-object-methods.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/024-object-methods.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -1866,14 +1867,18 @@ Let's order another pizza. </p>
           <p>An overwhelming look at objects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects">https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Predefined_Core_Objects</a></p>
         </section>
 
+        <section class="slide title">
+          <h1>Arrays</h1>
+        </section>
+
         <section class="slide">
           <h2>Arrays</h2>
-          <p><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
-          <p>Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
-          <img src="framework/img/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
-          <p>Just like variables and objects, declare an array with the keyword var.</p>
-          <pre><code>var eggspressions = [];</code></pre>
-          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
+          <p class="delayed"><span class="highlight-text">Arrays</span> are similar to objects; they both hold a collection of values. However, arrays hold its values in a numerical index rather than labels. </p>
+          <p class="delayed">Think of arrays as egg cartons. All the eggs are in one carton but each egg has its own slot. </p>
+          <img class="delayed" src="framework/img/egg-carton.jpeg" alt="egg carton" align="left" style="padding-right: 20px;"/>
+          <p class="delayed">Just like variables and objects, declare an array with the keyword var.</p>
+          <pre class="delayed"><code>var eggspressions = [];</code></pre>
+          <small class="delayed"><img class="delayed" src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>Unlike objects, arrays are declared with square brackets <code>[ ]</code>.</small>
         </section>
 
         <section class="slide">
@@ -1898,11 +1903,11 @@ var eggspressions = [];</code></pre>
 
         <section class="slide">
           <h2>Arrays and Indexes</h2>
-          <p><span class="highlight-text">Index</span> numbers are used to <span class="highlight-text">assign</span> values. </p>
-          <p>Index numbers are also used to <span class="highlight-text">access</span> values. </p>
-          <p>To access the value of the second egg in the <code>eggspressions</code> array, use index 1 since it's the second item in the list. </p>
-          <p class="highlight-color">File: examples/025-arrays-and-indexes.html</p>
-          <div data-markdown>
+          <p class="delayed"><span class="highlight-text">Index</span> numbers are used to <span class="highlight-text">assign</span> values. </p>
+          <p class="delayed">Index numbers are also used to <span class="highlight-text">access</span> values. </p>
+          <p class="delayed">To access the value of the second egg in the <code>eggspressions</code> array, use index 1 since it's the second item in the list. </p>
+          <p class="highlight-color delayed">File: examples/025-arrays-and-indexes.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             var eggspressions = [];
 
@@ -1914,16 +1919,16 @@ var eggspressions = [];</code></pre>
             document.write("The 2nd egg is " + eggspressions[1] + " even though it has an index of 1.");
             ```
           </div>
-          <a href="examples/025-arrays-and-indexes.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/025-arrays-and-indexes.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
-          <h2>Arrays and Properties</h2>
-          <p>Since <span class="highlight-text">Arrays</span> are also objects, there are many properties associated with the Array object. </p>
-          <p>The <code>length</code> property is also associated with array objects.</p>
-          <p>As mentioned previously, the <code>length</code> property returns the number of characters when associated with a <span class="highlight-text">string</span>. When used with an <span class="highlight-text">Array</span>, the <code>length</code> property returns the number of elements. </p>
-          <p class="highlight-color">File: examples/026-arrays-and-properties.html</p>
-          <div data-markdown>
+          <h2 class="delayed">Arrays and Properties</h2>
+          <p class="delayed">Since <span class="highlight-text">Arrays</span> are also objects, there are many properties associated with the Array object. </p>
+          <p class="delayed">The <code>length</code> property is also associated with array objects.</p>
+          <p class="delayed">As mentioned previously, the <code>length</code> property returns the number of characters when associated with a <span class="highlight-text">string</span>. When used with an <span class="highlight-text">Array</span>, the <code>length</code> property returns the number of elements. </p>
+          <p class="highlight-color delayed">File: examples/026-arrays-and-properties.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             // string variable
             var name = "Christina";
@@ -1939,22 +1944,22 @@ var eggspressions = [];</code></pre>
             //document.write(eggspressions.length);
             ```
           </div>
-          <a href="examples/026-arrays-and-properties.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/026-arrays-and-properties.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>Arrays &amp; Length: Why?</h2>
-          <p>It is common to use JavaScript to run through a list of values and apply some code to it. In order to do this, we need to know how many elements there are in total. </p>
-          <p>Let's look at this photo gallery from <a href="http://abcnews.go.com/US/photos/snow-blast-polar-cold-21609711/image-22767131">abcnews.go.com</a> and figure out how length can be used here. </p>
-          <p><img src="framework/img/exampleslideshow.png" alt="slideshow example" height="300"/></p>
+          <p class="delayed">It is common to use JavaScript to run through a list of values and apply some code to it. In order to do this, we need to know how many elements there are in total. </p>
+          <p class="delayed">Let's look at this photo gallery from <a href="http://abcnews.go.com/US/photos/snow-blast-polar-cold-21609711/image-22767131">abcnews.go.com</a> and figure out how length can be used here. </p>
+          <p class="delayed"><img src="framework/img/exampleslideshow.png" alt="slideshow example" height="300"/></p>
         </section>
 
         <section class="slide">
           <h2>Arrays &amp; Length and the 0 Index</h2>
-          <p>How do we access a particular value?</p>
-          <p>By using the index number.</p>
-          <p>So how do we access the <span class="highlight-text">last</span> value?</p>
-          <div data-markdown>
+          <p class="delayed">How do we access a particular value?</p>
+          <p class="delayed">By using the index number.</p>
+          <p class="delayed">So how do we access the <span class="highlight-text">last</span> value?</p>
+          <div data-markdown class="delayed">
             ```javascript
             var eggspressions = [];
             eggspressions[0] = "skeptical";
@@ -1963,9 +1968,9 @@ var eggspressions = [];</code></pre>
             eggspressions[3] = "giggling";
             ```
           </div>
-          <p>To access the last index value, you can use <code>eggspressions[3].</code> </p>
-          <p>BUT...</p>
-          <p>You can also use <code>eggspressions[eggspressions.length-1].</code></p>
+          <p class="delayed">To access the last index value, you can use <code>eggspressions[3].</code> </p>
+          <p class="delayed">BUT...</p>
+          <p class="delayed">You can also use <code>eggspressions[eggspressions.length-1].</code></p>
          </section>
 
         <section class="slide title">
@@ -1973,8 +1978,8 @@ var eggspressions = [];</code></pre>
         </section>
 
         <section class="slide">
-          <h2> REWIND: Arrays &amp; Length and the 0 Index </h2>
-          <div data-markdown>
+          <h2>REWIND: Arrays &amp; Length and the 0 Index </h2>
+          <div data-markdown class="delayed">
             ```javascript
             var eggspressions = [];
             eggspressions[0] = "skeptical";
@@ -1983,21 +1988,21 @@ var eggspressions = [];</code></pre>
             eggspressions[3] = "giggling";
             ```
           </div>
-          <p>Let's break it down.</p>
+          <p class="delayed">Let's break it down.</p>
           <ul>
-            <li><code>eggspressions.length</code> returns 4</li>
-            <li>index of last element is 3</li>
-            <li><code>eggspressions.length-1</code> is the same as 4 - 1 and will return 3</li>
-            <li><code>eggspressions[3]</code> returns the last value</li>
-            <li><code>eggspressions[eggspressions.length-1]</code> is the same as <code>eggspressions[3]</code></li>
+            <li class="delayed"><code>eggspressions.length</code> returns 4</li>
+            <li class="delayed">index of last element is 3</li>
+            <li class="delayed"><code>eggspressions.length-1</code> is the same as 4 - 1 and will return 3</li>
+            <li class="delayed"><code>eggspressions[3]</code> returns the last value</li>
+            <li class="delayed"><code>eggspressions[eggspressions.length-1]</code> is the same as <code>eggspressions[3]</code></li>
           </ul>
         </section>
 
         <section class="slide">
           <h2>How is this useful?</h2>
-          <p> Since the index always begins at 0, the last index value is always <code>length-1</code>. This is useful if you want to always access the last index, despite new additions, and apply some code to it. </p>
-          <p class="highlight-color">File: examples/027-how-is-this-useful.html</p>
-          <div data-markdown>
+          <p class="delayed"> Since the index always begins at 0, the last index value is always <code>length-1</code>. This is useful if you want to always access the last index, despite new additions, and apply some code to it. </p>
+          <p class="highlight-color delayed">File: examples/027-how-is-this-useful.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             var eggspressions = [];
             eggspressions[0] = "skeptical";
@@ -2009,17 +2014,21 @@ var eggspressions = [];</code></pre>
             document.write(eggspressions[eggspressions.length-1] + " is the last element in the array.");
             ```
           </div>
-          <a href="examples/027-how-is-this-useful.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/027-how-is-this-useful.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
 
+        </section>
+
+        <section class="slide title">
+          <h1>Loops</h1>
         </section>
 
         <section class="slide">
           <h2>Loops</h2>
-          <p>Why use loops? Because sometimes we need to <span class="highlight-text">execute repetitive code</span> for a specified number of times or through a list of values. </p>
-          <p>Loops will execute the same code continuously, using conditional statements to determine when to begin and stop. </p>
-          <p>It's like creating a playlist on your favorite music player.</p>
-          <p>You create a list of songs, press play and then each song is played automatically in the set order of the playlist. When it reaches the end of the playlist, it stops</p>
-          <p>We will be discussing <code>while loops</code> and for <code>loops</code>.</p>
+          <p class="delayed">Why use loops? Because sometimes we need to <span class="highlight-text">execute repetitive code</span> for a specified number of times or through a list of values. </p>
+          <p class="delayed">Loops will execute the same code continuously, using conditional statements to determine when to begin and stop. </p>
+          <p class="delayed">It's like creating a playlist on your favorite music player.</p>
+          <p class="delayed">You create a list of songs, press play and then each song is played automatically in the set order of the playlist. When it reaches the end of the playlist, it stops</p>
+          <p class="delayed">We will be discussing <code>while loops</code> and for <code>loops</code>.</p>
         </section>
 
         <section class="slide centered">
@@ -2030,11 +2039,11 @@ var eggspressions = [];</code></pre>
 
        <section class="slide">
           <h2>While Loop</h2>
-          <p>The <span class="highlight-text">WHILE LOOP</span> executes the code contained in curly braces <code>{ }</code> <span class="highlight-text">while</span> the condition is true.</p>
-          <p>An index variable is required to keep track of its place in the loop.</p>
-          <p>The <span class="highlight-text">WHILE LOOP</span> stops executing the code once the condition becomes false.</p>
-          <p>If you had 10 songs in your playlist, the player won't stop until it reaches the end of song 10.</p>
-          <div data-markdown>
+          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> executes the code contained in curly braces <code>{ }</code> <span class="highlight-text">while</span> the condition is true.</p>
+          <p class="delayed">An index variable is required to keep track of its place in the loop.</p>
+          <p class="delayed">The <span class="highlight-text">WHILE LOOP</span> stops executing the code once the condition becomes false.</p>
+          <p class="delayed">If you had 10 songs in your playlist, the player won't stop until it reaches the end of song 10.</p>
+          <div data-markdown class="delayed">
           ```javascript
           //declare index variable
           var i = 0;
@@ -2046,26 +2055,26 @@ var eggspressions = [];</code></pre>
           ```
           </div>
 
-          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
+          <small class="delayed"><img class="delayed" src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>If the condition is always true, the loop will run infinitely and will never exit the while loop. This can cause your browser to crash!</small>
         </section>
 
         <section class="slide">
           <h2>While Loop in Action!</h2>
-          <p>Let's use the <span class="highlight-text">WHILE LOOP</span> to output the mathematical formula for converting Celsius to Fahrenheit.</p>
-          <p>(The formula is: <code>Temperature = Temperature * 9 / 5 + 32</code>)</p>
-          <p>This next example uses a <span class="highlight-text">WHILE LOOP</span> to output the results of the temperature formula into HTML table rows that are also added dynamically.</p>
-          <p>It will stop when we reach 30 degrees Celsius (or whatever number is declared in the condition).</p>
-          <p>See next slide for the example.</p>
+          <p class="delayed">Let's use the <span class="highlight-text">WHILE LOOP</span> to output the mathematical formula for converting Celsius to Fahrenheit.</p>
+          <p class="delayed">(The formula is: <code>Temperature = Temperature * 9 / 5 + 32</code>)</p>
+          <p class="delayed">This next example uses a <span class="highlight-text">WHILE LOOP</span> to output the results of the temperature formula into HTML table rows that are also added dynamically.</p>
+          <p class="delayed">It will stop when we reach 30 degrees Celsius (or whatever number is declared in the condition).</p>
+          <p class="delayed">See next slide for the example.</p>
         </section>
 
          <section class="slide">
           <h2>While Loop Temperature Conversion</h2>
-          <p>Let's look at the temperature conversion table with and without JavaScript and compare the difference in the amount of repetitive code required to create a table like this manually.</p>
-          <p>Conversion table using a <a href="exercises/temperature.html">while loop</a>.</p>
-          <p>Conversion table <a href="exercises/temperature-nojs.html">without JavaScript</a>.</p>
-          <p>View source and compare the difference between the amount of code.</p>
-          <img src="framework/img/while-loop.jpg" alt="while loop source code" />
-          <img src="framework/img/no-while-loop.jpg" alt="no while loop source code" />
+          <p class="delayed">Let's look at the temperature conversion table with and without JavaScript and compare the difference in the amount of repetitive code required to create a table like this manually.</p>
+          <p class="delayed">Conversion table using a <a href="exercises/temperature.html">while loop</a>.</p>
+          <p class="delayed">Conversion table <a href="exercises/temperature-nojs.html">without JavaScript</a>.</p>
+          <p class="delayed">View source and compare the difference between the amount of code.</p>
+          <img class="delayed" src="framework/img/while-loop.jpg" alt="while loop source code" />
+          <img class="delayed" src="framework/img/no-while-loop.jpg" alt="no while loop source code" />
         </section>
 
         <section class="slide centered">
@@ -2076,9 +2085,9 @@ var eggspressions = [];</code></pre>
 
        <section class="slide">
           <h2>For Loops</h2>
-          <p>A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
-          <p>The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
-          <div data-markdown>
+          <p class="delayed">A <span class="highlight-text">FOR LOOP</span> also loops through the code a specified number of times until the condition is false.</p>
+          <p class="delayed">The index, conditional test and incrementer are all declared in one line. Basically, it's the <span class="highlight-text">WHILE LOOP</span> condensed.</p>
+          <div class="delayed" data-markdown>
             ```javascript
             /* While Loop */
             var i = 0; //index
@@ -2088,7 +2097,7 @@ var eggspressions = [];</code></pre>
             }
             ```
           </div>
-          <div data-markdown>
+          <div data-markdown class="delayed">
             ```javascript
             /* For Loop */
             // index, condition, incrementer
@@ -2097,7 +2106,7 @@ var eggspressions = [];</code></pre>
             }
             ```
           </div>
-          <small><img src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>
+          <small class="delayed"><img class="delayed" src="framework/img/rawbot-reminder.png" alt="robot reminder" align="left"/>
             Incrementer (i++) and decrementer (i--) operators add or subtract one.<br />
             i++ is the same as i = i + 1<br />
             i-- is the same as i = i - 1<br />
@@ -2106,9 +2115,9 @@ var eggspressions = [];</code></pre>
 
        <section class="slide">
           <h2>For Loops and Arrays</h2>
-          <p><span class="highlight-text">FOR LOOPS</span> are useful when used in conjunction with <span class="highlight-text">ARRAYS</span> because they can be used to execute specific actions while going through the list of values.</p>
-          <p>Back to our robot store. It wouldn't be much of a store if there was only one product! We can create a list of different products with various prices by creating an array.</p>
-          <div data-markdown>
+          <p class="delayed"><span class="highlight-text">FOR LOOPS</span> are useful when used in conjunction with <span class="highlight-text">ARRAYS</span> because they can be used to execute specific actions while going through the list of values.</p>
+          <p class="delayed">Back to our robot store. It wouldn't be much of a store if there was only one product! We can create a list of different products with various prices by creating an array.</p>
+          <div data-markdown class="delayed">
           ```javascript
           var productPrices = [];
           productPrices[0] = 17.99;
@@ -2123,9 +2132,9 @@ var eggspressions = [];</code></pre>
 
        <section class="slide">
           <h2>For Loops, Arrays, Robots and Sales</h2>
-          <p>Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
-          <p class="highlight-color">File: examples/028-for-loops-arrays-robots-sales.html</p>
-          <div data-markdown>
+          <p class="delayed">Suppose we wanted to put all the items over $15 on sale?  Let's use the <span class="highlight-text">FOR LOOP</span> to determine which items are eligible for the sale and output the product number.</p>
+          <p class="highlight-color delayed">File: examples/028-for-loops-arrays-robots-sales.html</p>
+          <div data-markdown class="delayed">
             ```javascript
             var productPrices = [];
             productPrices[0] = 17.99;
@@ -2145,7 +2154,7 @@ var eggspressions = [];</code></pre>
             }
             ```
           </div>
-          <a href="examples/028-for-loops-arrays-robots-sales.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/028-for-loops-arrays-robots-sales.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
        <section class="slide">
@@ -2154,7 +2163,7 @@ var eggspressions = [];</code></pre>
           <p>Sounds like a great deal for the customer, but all you have is a static HTML page right now. Are you going to go through every single product, calculate the discounted price, and then update every entry manually? No, you're going to use loops and arrays!</p>
           <p>Download the HTML exercise file: <a href="exercises/shopping_cart_products_start.html">exercises/shopping_cart_products_start.html</a></p>
           <p class="highlight-color">TODO: Check within the code for your THREE tasks.</p>
-          <small>If you're stuck, here's the solution file: <a href="assets/exercises/shopping_cart_products_final.html">assets/exercises/shopping_cart_products_final.html</a></small>
+          <small>If you're stuck, here's the solution file: <a href="exercises/shopping_cart_products_final.html">exercises/shopping_cart_products_final.html</a></small>
         </section>
 
         <section class="slide title">
@@ -2174,48 +2183,43 @@ var eggspressions = [];</code></pre>
 
         <section class="slide">
           <h2>Manipulating objects on a real HTML page</h2>
-          <p>Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
-        </section>
-
-        <section class="slide">
-          <h2>Manipulating objects on a real HTML page</h2>
-          <p>Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
-          <p style="text-align:center"><img src="framework/img/browser-blocks.jpg" alt="browser blocks" />
+          <p class="delayed">Think about your HTML web page (your "browser DOCUMENT") as being made up of many blocks.</p>
+          <p style="text-align:center" class="delayed"><img src="framework/img/browser-blocks.jpg" alt="browser blocks" />
         </p>
       </section>
 
         <section class="slide">
           <h2>Pre-defined Blocks</h2>
-          <p>Some blocks are defined by the browser, such as the browser <span class="highlight-text">window</span>.</p>
-          <p style="text-align:center"><img src="framework/img/browser-window.jpg" alt="browser window" />
+          <p class="delayed">Some blocks are defined by the browser, such as the browser <span class="highlight-text">window</span>.</p>
+          <p class="delayed" style="text-align:center"><img src="framework/img/browser-window.jpg" alt="browser window" />
         </section>
 
         <section class="slide">
           <h2>Document Objects</h2>
-          <p>All of these blocks are <span class="highlight-text">OBJECTS</span> -- just like the ones we covered earlier! And all these objects have pre-written functions/methods you can use.</p>
-          <p>Does the line of code below make more sense now? <code>document</code> is one of the main objects of a web page and it has a method named <code>write</code> that accepts a string as a parameter. document has lots of other properties and methods too: <a href="http://dochub.io/#dom/document">check out this list</a>.</p>
-          <div data-markdown>
+          <p class="delayed">All of these blocks are <span class="highlight-text">OBJECTS</span> -- just like the ones we covered earlier! And all these objects have pre-written functions/methods you can use.</p>
+          <p class="delayed">Does the line of code below make more sense now? <code>document</code> is one of the main objects of a web page and it has a method named <code>write</code> that accepts a string as a parameter. document has lots of other properties and methods too: <a href="http://dochub.io/#dom/document">check out this list</a>.</p>
+          <div data-markdown class="delayed">
             ```javascript
             document.write("Hello!");
             ```
           </div>
-          <a href="examples/029-document-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/029-document-objects.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
           <h2>HTML Element Objects</h2>
-          <p>The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
-          <small>(It's important that your HTML tag has an id attribute in order to do this!)</small>
-          <p>For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
-          <p class="highlight-color">File: examples/030-html-element-objects.html</p>
-          <pre><code>&lt;p id="text" style="border: 1px solid red;">
+          <p class="delayed">The most repetitive thing you'll ever do with JavaScript is getting references to your HTML tags ("elements") using <code>document.getElementById()</code>.</p>
+          <small class="delayed">(It's important that your HTML tag has an id attribute in order to do this!)</small>
+          <p class="delayed">For example, let's dynamically find out what the text is in a paragraph tag by reading its innerHTML property. (You can find all the things you can do with elements <a href="http://dochub.io/#dom/element">here</a>.)</p>
+          <p class="highlight-color delayed">File: examples/030-html-element-objects.html</p>
+          <pre class="delayed"><code>&lt;p id="text" style="border: 1px solid red;">
   Loading...
 &lt;/p>
 
 &lt;script>
 
 &lt;/script></code></pre>
-          <a href="examples/030-html-element-objects.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/030-html-element-objects.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -2247,10 +2251,10 @@ var eggspressions = [];</code></pre>
 
         <section class="slide">
           <h2>Updating CSS Styles</h2>
-          <p>You can even update an HTML element's CSS styles dynamically using its style property.</p>
-          <p>Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
-          <p class="highlight-color">File: examples/033-updating-css-styles.html</p>
-          <pre><code>&lt;style>
+          <p class="delayed">You can even update an HTML element's CSS styles dynamically using its style property.</p>
+          <p class="delayed">Consider how you might program a button toggle effect to show the difference between "selected" or "deselected" states. (Note the differences between how properties are written in CSS to how they appear in JavaScript -- background-color versus backgroundColor.</p>
+          <p class="highlight-color delayed">File: examples/033-updating-css-styles.html</p>
+          <pre class="delayed"><code>&lt;style>
   #clickme {
     text-align: center;
     width: 100px;
@@ -2276,7 +2280,7 @@ Click me!
     }
   }
 &lt;/script></code></pre>
-          <a href="examples/033-updating-css-styles.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/033-updating-css-styles.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide">
@@ -2314,10 +2318,10 @@ Click me!
 
         <section class="slide">
           <h2>Make DOM Elements Magically Appear!</h2>
-          <p>You can even create completely new elements out of thin air! Use <code>document.createElement()</code> and <code>appendChild()</code>;</p>
+          <p class="delayed">You can even create completely new elements out of thin air! Use <code>document.createElement()</code> and <code>appendChild()</code>;</p>
 
-          <p class="highlight-color">File: examples/035-dom-elements.html</p>
-          <pre><code>&lt;div id="emptyDiv" style="border: 1px solid red; padding: 10px;">
+          <p class="delayed highlight-color">File: examples/035-dom-elements.html</p>
+          <pre class="delayed"><code>&lt;div id="emptyDiv" style="border: 1px solid red; padding: 10px;">
 &lt;/div>
 
 &lt;script>
@@ -2326,7 +2330,7 @@ Click me!
   //insert it into the currently empty div
 
 &lt;/script></code></pre>
-          <a href="examples/035-dom-elements.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+          <a href="examples/035-dom-elements.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
         </section>
 
         <section class="slide title">
@@ -2488,7 +2492,7 @@ Click me!
         <!-- Last slide -->
         <section class="slide">
             <h2>Thank you!</h2>
-            <p>Closing remarks</p>
+            <p>Intro to Javascript with Florida</p>
             <p class="attribution">Slide deck created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
         </section>
       </main><!-- cls main section -->
