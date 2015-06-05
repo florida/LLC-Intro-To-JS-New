@@ -135,9 +135,24 @@
 
           <p>Select: <code>View &gt; Developer &gt; JavaScript Console</code>.</p>
 
+          <p>You can open the console when viewing <em>any</em> HTML page but let’s use this blank HTML page, <a href="framework/console.html">console.html</a> so we can have a blank slate to practice with throughout the day. </p>
+
+          <p>Open <a href="framework/console.html">console.html</a> now and take a moment to practice opening and closing the console until you’re comfortable with it.</p>
+
           <div class="presenter-notes">
             <p>Re-iterate to the class to keep console.html open in a tab to refer back to for the console exercises.  A blank document was created rather than opening the console in the slide deck so any errors showing won't confuse the learners and take away from the lesson explaining things not needed for the task at hand.</p>
           </div>
+        </section>
+
+        <section class="slide">
+          <h2>Mini-exercise</h2>
+          <p>Let's experiment with typing some input into the console. Return to <strong>console.html</strong> and open the console. After the <code>&gt;</code> symbol, type your favorite number and press the enter/return key. </p>
+          <p>You will see something like this:</p>
+          <p><img src="framework/img/console-number.gif" alt="console number"></p>
+          <p>The <code>&gt;</code> symbol is used by the console to represent a space for your input.<br>The <code>&lt;</code> symbol is used by the console to represent the <strong>returned value</strong> of your input.  </p>
+          <p>You can also input text BUT when using text, make sure you put it in quotes (more on this soon).</p>
+          <p><img src="framework/img/console-string.gif" alt="console string"></p>
+          <p>The command you input into the console gets <em>evaluated</em> and a value is returned back to you.</p>
         </section>
 
         <section class="slide title">
@@ -366,22 +381,292 @@ document.write("Hello, " + name);</code></pre>
           <p class="delayed">You'll want to do things like offer online shopping, print shipping labels and tempt loyal customers with members only sales!</p>
           <p class="delayed">You'll also want to make sure that everything works properly as well.</p>
           <p class="delayed">That means customers shouldn't be able to submit empty forms and product totals must be calculated properly in their shopping carts.</p>
-          <p class="delayed">In order to create a website that can handle these requirements, we will need to learn how to use <span class="highlight-text">variables, functions, objects, arrays and loops</span>.</p>
+          <p class="delayed">In order to create a website that can handle these requirements, we will need to learn how to use <strong>functions</strong>, <strong>variables</strong> and <strong>conditionals</strong>.</p>
+        </section>
+
+
+        <section class="slide title">
+          <h1>Functions</h1>
         </section>
 
         <section class="slide">
-          <h2>An Aside...</h2>
+          <h2 class="delayed">Functions &amp; Methods</h2>
+          <p class="delayed">What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
+          <p class="delayed"><strong>Making a Cake</strong></p>
+          <table class="delayed" cellspacing="0" width="100%" >
+            <thead>
+              <tr>
+                <td>The Old Way</td>
+                <td>The Improved Way</td>
+              </tr>
+            </thead>
+            <tr>
+              <td>
+                <ol>
+                  <li>Get a bowl</li>
+                  <li>Add some eggs</li>
+                  <li>Add some flour</li>
+                  <li>Stir</li>
+                  <li>Knead</li>
+                  <li>Bake</li>
+                </ol>
+              </td>
+              <td valign="top">
+                <ol>
+                  <li>Make a cake</li>
+                  <li>Nom nom nom</li>
+                </ol>
+              </td>
+            </tr>
+          </table>
+        </section>
 
-          <p class="delayed">Before we continue, here's a few helpful JavaScript built-ins that will help with testing and writing code.</p>
+        <section class="slide">
+          <h2>Functions in JavaScript</h2>
+          <p class="delayed"><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
+          <p data-markdown class="delayed">`prompt()` and `alert()` are two functions that are pre-written into JavaScript.</p>
+          <p class="delayed">Someone already did the hard work for us by writing these functions to show us popups in the browser. </p>
+          <p class="delayed">But we can also write our own!</p>
+        </section>
 
-          <h3 class="delayed">alerts</h3>
-          <pre class="delayed"><code>alert("This is an alert box.");</code></pre>
+        <section class="slide centered">
+          <h2>Function Syntax</h2>
+          <img src="framework/img/syntax-function.gif" alt="robot reminder" class="delayed" />
+        </section>
 
-          <h3 class="delayed">prompts</h3>
-          <pre class="delayed"><code>prompt("This is a prompt box. Enter some info.");</code></pre>
+        <section class="slide">
+          <h2>Defining a Function</h2>
+          <p class="delayed">Create your own functions to group together your own repetitive tasks.</p>
+          <p class="delayed">To create a function, it needs to be <span class="highlight-text">defined</span> first.</p>
+          <p class="delayed" data-markdown>There are different ways to define a `function`, but the most common way is using the function keyword and enclosing one or more lines of code within curly braces `{ }`.</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            function nameOfFunction() {
+              var name = "Name";
+            }
+            ```
+          </div>
+        </section>
 
-          <h3 class="delayed">text output</h3>
-          <pre class="delayed"><code>document.write("document.write outputs text into the page.");</code></pre>
+        <section class="slide">
+          <h2>Calling a Function</h2>
+          <p>The code within functions doesn't execute until it's <span class="highlight-text">called</span>!</p>
+          <p>Let's try that again.</p>
+          <div data-markdown class="delayed">
+            ```javascript
+            //defining the function
+            function sayMyName() {
+              alert("Florida");
+            }
+
+            //Calling the function
+            sayMyName();
+            ```
+          </div>
+          <a href="examples/016-calling-a-function.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Functions &amp; Events</h2>
+          <p class="delayed">The browser executes the JavaScript as soon as the page loads. </p>
+          <p class="delayed">But sometimes you need to control when it executes. For example, if someone rolls over a navigation menu or presses a Submit button. </p>
+          <p class="delayed">This is where functions also come into play.</p>
+
+          <div data-markdown class="delayed">
+            ```javascript
+            //define function
+            function sayMyName() {
+              alert("Florida");
+            }
+            ```
+          </div>
+
+          <div data-markdown class="delayed">
+            ```xml
+            &lt;!-- call function from a button click -->
+            &lt;input type="button" onclick="sayMyName()" value="Say my name!">
+            &lt;br />
+            &lt;br />
+            &lt;!-- call function from an HTML tag -->
+            &lt;div onclick="sayMyName();">
+              Click here to call the function!
+            &lt;/div>
+            ```
+          </div>
+
+          <a href="examples/017-functions-and-events.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Functions in Functions</h2>
+          <p>Let's take another look at our shopping cart and figure out what the functions are doing. </p>
+          <div data-markdown>
+            ```javascript
+            var quantity = 0;
+
+            function addItem(){
+              quantity = quantity + 1;
+              refreshTotal();
+            }
+            function removeItem(){
+              if (quantity > 0) {
+                quantity = quantity - 1;
+              }
+              refreshTotal();
+            }
+
+            function refreshTotal() {
+              var totalCost = quantity * 20; //quantity * fixed price
+              var totalCostToShow = "$" + totalCost;
+              document.getElementById('updateQuantity').value = quantity; //updates
+              document.getElementById('updateTotal').value = totalCostToShow; //updates
+            }
+            ```
+          </div>
+          <div data-markdown>
+            ```xml
+            &lt;div class="item">
+              &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" />
+              &lt;br />
+              &lt;button onclick="addItem();">Add&lt;/button>
+              &lt;button onclick="removeItem();">Remove</button>
+              &lt;br />
+              Quantity
+              &lt;input type="text" id="updateQuantity" value="0" readonly />
+              &lt;br />
+              &lt;br />
+              Total Cost:
+              &lt;input type="text" id="updateTotal" value="0" readonly />
+            &lt;/div>
+            ```
+          </div>
+
+          <a href="examples/018-functions-in-functions.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+
+        </section>
+
+        <section class="slide">
+          <h2>Review: What do we know about Functions so far?</h2>
+          <ul>
+            <li class="delayed">Created &amp; defined by using the <code>function</code> keyword</li>
+            <li class="delayed">Used to group together related lines of code and store them under descriptive names</li>
+            <li class="delayed">Can be reused just by calling the function name</li>
+            <li class="delayed"><span class="highlight-text">Define</span> the function first but it will not run until you <span class="highlight">call</span> the function</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Functions and Pizza</h2>
+          <p>Let's order a pizza!  The <code>orderPizza(</code>) function below represents all the steps it takes to place an order (find the pizza place's phone number, call them, give them your address, etc). </p>
+          <p>Inside the function is where the pizza restaurant will hold our option choices (toppings, crust type and size of pizza). Now they can use this stored information to make our order. </p>
+          <div data-markdown>
+            ```javascript
+            function orderPizza() {
+              var topping = "cheese";
+              var crust = "thin crust";
+              var size = "medium";
+
+              document.write("Pizza order:<br />" + topping + ", " + crust + ", " + size);
+            }
+
+            orderPizza();
+            ```
+          </div>
+          <a href="examples/019-functions-and-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>More Pizza!</h2>
+          <p>What if we want to order another pizza but with different options?
+Let's order another pizza. </p>
+          <div data-markdown>
+          ```javascript
+          function orderAnotherPizza() {
+            var topping = "pepperoni";
+            var crust = "stuffed crust";
+            var size = "small";
+
+            document.write("Pizza order:<br />" + topping + ", " + crust + ", " + size);
+          }
+
+          orderAnotherPizza();
+          ```
+          </div>
+          <a href="examples/020-more-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Global vs Local Variables</h2>
+          <p>Let's say the pizza place always want to include cheese as a basic topping in all of the pizzas. We can declare a <code>baseTopping</code> variable outside of the function so it can be accessible from anywhere in the program. </p>
+          <div data-markdown>
+          ```javascript
+          /* With great power (globals) comes great responsibility.
+          You might think, 'why not make ALL the variables global?'.
+          Ask your mentor! */
+          var baseTopping = "cheese";
+
+          function orderPizza() {
+            var topping = "bacon";
+            var crust = "thin crust";
+            var size = "medium";
+            document.write("Pizza order:<br />" + baseTopping
+            + "<br />" + topping + ", " + crust + ", " + size + "<br /><br />");
+          }
+          function orderAnotherPizza() {
+            var topping = "pepperoni";
+            var crust = "stuffed crust";
+            var size = "small";
+            document.write("Pizza order:<br />" + baseTopping
+            + "<br />" + topping + ", " + crust + ", " + size);
+          }
+
+          orderPizza();
+          orderAnotherPizza();
+          ```
+          </div>
+          <a href="examples/021-global-vs-local-variables.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Functions, Pizza and Parameters</h2>
+          <p>This could get cumbersome if we wanted to make a lot of pizzas.  How can we re-use the <code>orderPizza()</code> function instead of creating multiple functions? We use <span class="highlight-text">PARAMETERS</span> or <span class="highlight-text">ARGUMENTS</span>.</p>
+          <p>Functions can be used with one parameter, more than one parameter or none at all.</p>
+          <p class="highlight-color">File: examples/022-functions-pizza-parameters.html</p>
+          <div data-markdown>
+            ```javascript
+            var baseTopping = "cheese";
+
+            function orderPizza() {
+              var topping = "bacon";
+              var crust = "thin crust";
+              var size = "medium";
+              document.write("Pizza order:<br />" + baseTopping
+              + "<br />" + topping + ", " + crust + ", " + size + "<br /><br />");
+            }
+            function orderAnotherPizza() {
+              var topping = "pepperoni";
+              var crust = "stuffed crust";
+              var size = "small";
+              document.write("Pizza order:<br />" + baseTopping
+              + "<br />" + topping + ", " + crust + ", " + size);
+            }
+
+            orderPizza();
+            orderAnotherPizza();
+            ```
+          </div>
+          <a href="examples/022-functions-pizza-parameters.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
+        </section>
+
+        <section class="slide">
+          <h2>Functions and Parameters</h2>
+          <p>Functions are more flexible when used with parameters because variables can be passed into the function.</p>
+          <p>In the <code>orderPizza()</code> function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
+        </section>
+
+        <section class="slide centered">
+          <h2>Review: Functions and Parameters</h2>
+          <img src="framework/img/code-function-refactor.gif" alt="function refactor" />
         </section>
 
         <section class="slide title">
@@ -1379,288 +1664,6 @@ What are some questions or issues you are having with the material covered so fa
         <section class="slide title">
           <h1>JavaScript Theory Hands-on </h1>
           <h2>Part 2</h2>
-        </section>
-
-        <section class="slide title">
-          <h1>Functions</h1>
-        </section>
-
-        <section class="slide">
-          <h2 class="delayed">Functions &amp; Methods</h2>
-          <p class="delayed">What is something that you do that's very repetitive or a hassle? Wouldn't it be great if we could complete a repetitive task by executing fewer overt steps? </p>
-          <p class="delayed"><strong>Making a Cake</strong></p>
-          <table class="delayed" cellspacing="0" width="100%" >
-            <thead>
-              <td>The Old Way</td>
-              <td>The Improved Way</td>
-            </thead>
-            <tr>
-              <td>
-                <ol>
-                  <li>Get a bowl</li>
-                  <li>Add some eggs</li>
-                  <li>Add some flour</li>
-                  <li>Stir</li>
-                  <li>Knead</li>
-                  <li>Bake</li>
-                </ol>
-              </td>
-              <td valign="top">
-                <ol>
-                  <li>Make a cake</li>
-                  <li>Nom nom nom</li>
-                </ol>
-              </td>
-            </tr>
-          </table>
-        </section>
-
-        <section class="slide">
-          <h2>Functions in JavaScript</h2>
-          <p class="delayed"><span class="highlight-text">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called methods when found on an object - more on that in a bit!</p>
-          <p data-markdown class="delayed">`prompt()` and `alert()` are two functions that are pre-written into JavaScript.</p>
-          <p class="delayed">Someone already did the hard work for us by writing these functions to show us popups in the browser. </p>
-          <p class="delayed">But we can also write our own!</p>
-        </section>
-
-        <section class="slide centered">
-          <h2>Function Syntax</h2>
-          <img src="framework/img/syntax-function.gif" alt="robot reminder" class="delayed" />
-        </section>
-
-        <section class="slide">
-          <h2>Defining a Function</h2>
-          <p class="delayed">Create your own functions to group together your own repetitive tasks.</p>
-          <p class="delayed">To create a function, it needs to be <span class="highlight-text">defined</span> first.</p>
-          <p class="delayed" data-markdown>There are different ways to define a `function`, but the most common way is using the function keyword and enclosing one or more lines of code within curly braces `{ }`.</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            function nameOfFunction() {
-              var name = "Name";
-            }
-            ```
-          </div>
-        </section>
-
-        <section class="slide">
-          <h2>Calling a Function</h2>
-          <p>The code within functions doesn't execute until it's <span class="highlight-text">called</span>!</p>
-          <p>Let's try that again.</p>
-          <div data-markdown class="delayed">
-            ```javascript
-            //defining the function
-            function sayMyName() {
-              alert("Florida");
-            }
-
-            //Calling the function
-            sayMyName();
-            ```
-          </div>
-          <a href="examples/016-calling-a-function.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Functions &amp; Events</h2>
-          <p class="delayed">The browser executes the JavaScript as soon as the page loads. </p>
-          <p class="delayed">But sometimes you need to control when it executes. For example, if someone rolls over a navigation menu or presses a Submit button. </p>
-          <p class="delayed">This is where functions also come into play.</p>
-
-          <div data-markdown class="delayed">
-            ```javascript
-            //define function
-            function sayMyName() {
-              alert("Florida");
-            }
-            ```
-          </div>
-
-          <div data-markdown class="delayed">
-            ```xml
-            &lt;!-- call function from a button click -->
-            &lt;input type="button" onclick="sayMyName()" value="Say my name!">
-            &lt;br />
-            &lt;br />
-            &lt;!-- call function from an HTML tag -->
-            &lt;div onclick="sayMyName();">
-              Click here to call the function!
-            &lt;/div>
-            ```
-          </div>
-
-          <a href="examples/017-functions-and-events.html"><img class="delayed" src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Functions in Functions</h2>
-          <p>Let's take another look at our shopping cart and figure out what the functions are doing. </p>
-          <div data-markdown>
-            ```javascript
-            var quantity = 0;
-
-            function addItem(){
-              quantity = quantity + 1;
-              refreshTotal();
-            }
-            function removeItem(){
-              if (quantity > 0) {
-                quantity = quantity - 1;
-              }
-              refreshTotal();
-            }
-
-            function refreshTotal() {
-              var totalCost = quantity * 20; //quantity * fixed price
-              var totalCostToShow = "$" + totalCost;
-              document.getElementById('updateQuantity').value = quantity; //updates
-              document.getElementById('updateTotal').value = totalCostToShow; //updates
-            }
-            ```
-          </div>
-          <div data-markdown>
-            ```xml
-            &lt;div class="item">
-              &lt;img src="exercises/assets/plush-android.jpg" width="195" height="195" />
-              &lt;br />
-              &lt;button onclick="addItem();">Add&lt;/button>
-              &lt;button onclick="removeItem();">Remove</button>
-              &lt;br />
-              Quantity
-              &lt;input type="text" id="updateQuantity" value="0" readonly />
-              &lt;br />
-              &lt;br />
-              Total Cost:
-              &lt;input type="text" id="updateTotal" value="0" readonly />
-            &lt;/div>
-            ```
-          </div>
-
-          <a href="examples/018-functions-in-functions.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-
-        </section>
-
-        <section class="slide">
-          <h2>Review: What do we know about Functions so far?</h2>
-          <ul>
-            <li class="delayed">Created &amp; defined by using the <code>function</code> keyword</li>
-            <li class="delayed">Used to group together related lines of code and store them under descriptive names</li>
-            <li class="delayed">Can be reused just by calling the function name</li>
-            <li class="delayed"><span class="highlight-text">Define</span> the function first but it will not run until you <span class="highlight">call</span> the function</li>
-          </ul>
-        </section>
-
-        <section class="slide">
-          <h2>Functions and Pizza</h2>
-          <p>Let's order a pizza!  The <code>orderPizza(</code>) function below represents all the steps it takes to place an order (find the pizza place's phone number, call them, give them your address, etc). </p>
-          <p>Inside the function is where the pizza restaurant will hold our option choices (toppings, crust type and size of pizza). Now they can use this stored information to make our order. </p>
-          <div data-markdown>
-            ```javascript
-            function orderPizza() {
-              var topping = "cheese";
-              var crust = "thin crust";
-              var size = "medium";
-
-              document.write("Pizza order:<br />" + topping + ", " + crust + ", " + size);
-            }
-
-            orderPizza();
-            ```
-          </div>
-          <a href="examples/019-functions-and-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>More Pizza!</h2>
-          <p>What if we want to order another pizza but with different options?
-Let's order another pizza. </p>
-          <div data-markdown>
-          ```javascript
-          function orderAnotherPizza() {
-            var topping = "pepperoni";
-            var crust = "stuffed crust";
-            var size = "small";
-
-            document.write("Pizza order:<br />" + topping + ", " + crust + ", " + size);
-          }
-
-          orderAnotherPizza();
-          ```
-          </div>
-          <a href="examples/020-more-pizza.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Global vs Local Variables</h2>
-          <p>Let's say the pizza place always want to include cheese as a basic topping in all of the pizzas. We can declare a <code>baseTopping</code> variable outside of the function so it can be accessible from anywhere in the program. </p>
-          <div data-markdown>
-          ```javascript
-          /* With great power (globals) comes great responsibility.
-          You might think, 'why not make ALL the variables global?'.
-          Ask your mentor! */
-          var baseTopping = "cheese";
-
-          function orderPizza() {
-            var topping = "bacon";
-            var crust = "thin crust";
-            var size = "medium";
-            document.write("Pizza order:<br />" + baseTopping
-            + "<br />" + topping + ", " + crust + ", " + size + "<br /><br />");
-          }
-          function orderAnotherPizza() {
-            var topping = "pepperoni";
-            var crust = "stuffed crust";
-            var size = "small";
-            document.write("Pizza order:<br />" + baseTopping
-            + "<br />" + topping + ", " + crust + ", " + size);
-          }
-
-          orderPizza();
-          orderAnotherPizza();
-          ```
-          </div>
-          <a href="examples/021-global-vs-local-variables.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Functions, Pizza and Parameters</h2>
-          <p>This could get cumbersome if we wanted to make a lot of pizzas.  How can we re-use the <code>orderPizza()</code> function instead of creating multiple functions? We use <span class="highlight-text">PARAMETERS</span> or <span class="highlight-text">ARGUMENTS</span>.</p>
-          <p>Functions can be used with one parameter, more than one parameter or none at all.</p>
-          <p class="highlight-color">File: examples/022-functions-pizza-parameters.html</p>
-          <div data-markdown>
-            ```javascript
-            var baseTopping = "cheese";
-
-            function orderPizza() {
-              var topping = "bacon";
-              var crust = "thin crust";
-              var size = "medium";
-              document.write("Pizza order:<br />" + baseTopping
-              + "<br />" + topping + ", " + crust + ", " + size + "<br /><br />");
-            }
-            function orderAnotherPizza() {
-              var topping = "pepperoni";
-              var crust = "stuffed crust";
-              var size = "small";
-              document.write("Pizza order:<br />" + baseTopping
-              + "<br />" + topping + ", " + crust + ", " + size);
-            }
-
-            orderPizza();
-            orderAnotherPizza();
-            ```
-          </div>
-          <a href="examples/022-functions-pizza-parameters.html"><img src="framework/img/rawbot-run.png" alt="run code" align="right" /></a>
-        </section>
-
-        <section class="slide">
-          <h2>Functions and Parameters</h2>
-          <p>Functions are more flexible when used with parameters because variables can be passed into the function.</p>
-          <p>In the <code>orderPizza()</code> function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
-        </section>
-
-        <section class="slide centered">
-          <h2>Review: Functions and Parameters</h2>
-          <img src="framework/img/code-function-refactor.gif" alt="function refactor" />
         </section>
 
         <section class="slide title">
