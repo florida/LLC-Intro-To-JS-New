@@ -81,7 +81,9 @@ pre code {
 code {
   font-family: Monaco, Andale Mono, monospace;
   color: #444;
-  padding: 1px 4px;
+  background: white;
+  border-radius: 4px;
+  padding: 0 6px;
   font-size: 20px;
 }
 
