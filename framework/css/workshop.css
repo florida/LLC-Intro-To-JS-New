@@ -9,7 +9,8 @@
 
 .highlight-color {
   background-color: #ebcb8b;
-  padding: 10px;
+  padding: 3px 8px;
+  border-radius: 5px;
 }
 
 .bigger-text {
